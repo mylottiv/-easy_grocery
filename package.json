@@ -1,0 +1,20 @@
+{
+  "name": "easy_grocery",
+  "version": "1.0.0",
+  "description": "Easy to use, real-time grocery and inventory tracking and shopping app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mylottiv/easy_grocery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mylottiv/easy_grocery/issues"
+  },
+  "homepage": "https://github.com/mylottiv/easy_grocery#readme"
+}
