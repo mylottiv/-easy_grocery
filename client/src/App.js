@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navbar, Heading, Button } from 'react-bulma-components';
 import './App.css';
 
