@@ -17,6 +17,13 @@ Easy to use, real-time grocery and inventory tracking and shopping app
 ## Dependencies:
 - Node (Express)
 - React (create-react-app)
-- Bulma (react-bulma-components)
+- Bulma (react-bulma-components) (already not so sure about this one...)
 - Objection ORM (knex and PostgreSQL)
 - Auth0
+
+## Views:
+- Welcome/Landing
+- Dashboard
+- Inventory
+- Grocery List
+- Login/User Profile

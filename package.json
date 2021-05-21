@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/mylottiv/easy_grocery/issues"
   },
-  "homepage": "https://github.com/mylottiv/easy_grocery#readme"
+  "homepage": "https://github.com/mylottiv/easy_grocery#readme",
+  "dependencies": {}
 }
