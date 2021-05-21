@@ -1,27 +1,14 @@
-import { Navbar, Heading, Button } from 'react-bulma-components';
 import './App.css';
+import TopNavbar from './TopNavbar';
+import LandingHero from './LandingHero';
 
 function App() {
   return (
-    <Navbar>
-      <Navbar.Brand>
-        <Navbar.Item href='#'>
-          <Heading weight='bold' size={3}>
-            EZ-Grocery
-          </Heading>
-        </Navbar.Item>
-        <Navbar.Item>
-          <Button color='link'>
-            Login
-          </Button>
-        </Navbar.Item>
-        <Navbar.Burger />
-      </Navbar.Brand>
-      <Navbar.Menu>
-        {/* <Navbar.Container>
-        </Navbar.Container> */}
-      </Navbar.Menu>
-    </Navbar>
+    /* height and width styling is temporary */
+    <div className='landing-body' style={{ 'height': '640px', 'width': '360px' }}> 
+      <TopNavbar />
+      <LandingHero />
+    </div>
     // <Columns breakpoint='mobile' display='flex' alignItems='stretch' centered vCentered marginless>
     //   <Columns.Column display='flex' alignItems='center' size={6}>
     //     <Heading weight='bold' size={4}>
