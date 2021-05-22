@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import TopNavbar from './TopNavbar';
 
 it('renders top navbar component visible on mobile (brand)', () => {
