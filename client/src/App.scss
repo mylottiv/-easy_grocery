@@ -6,7 +6,6 @@
   // Image alignment, scaling etc still needs tweaking
   // background-repeat: no-repeat;
   // background-position: center; 
-  position: fixed;
 }
 
 .full-height-columns {
@@ -22,4 +21,25 @@
   // the funniest part of this copy pasta is that it works
 .full-height-columns .column {
     overflow-y: auto;
+}
+
+.hamburger-button {
+  background-color: transparent;
+  border-width: 1px;
+  border-color: transparent;
+}
+
+// CSS fix for navbar dropdown on mobile
+.navbar-item {
+
+  &.has-dropdown {
+    .navbar-dropdown {
+      display: none;
+    }
+    &.is-active {
+      .navbar-dropdown {
+        display: block;
+      }
+     }
+   }
 }

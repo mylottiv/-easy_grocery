@@ -7759,8 +7759,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem; }
 
 .landing-body {
-  background-image: url("./images/jakub-kapusnak-vnNFWKY7Tj4-unsplash.jpg");
-  position: fixed; }
+  background-image: url("./images/jakub-kapusnak-vnNFWKY7Tj4-unsplash.jpg"); }
 
 .full-height-columns {
   min-height: calc(100vh - ( 3.25rem - .75rem ));
@@ -7772,3 +7771,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .full-height-columns .column {
   overflow-y: auto; }
+
+.hamburger-button {
+  background-color: transparent;
+  border-width: 1px;
+  border-color: transparent; }
+
+.navbar-item.has-dropdown .navbar-dropdown {
+  display: none; }
+
+.navbar-item.has-dropdown.is-active .navbar-dropdown {
+  display: block; }
