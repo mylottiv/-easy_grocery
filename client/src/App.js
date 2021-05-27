@@ -4,8 +4,7 @@ import LandingHero from './LandingHero';
 
 function App() {
   return (
-    /* height and width styling is temporary */
-    <div className='landing-body' style={{ 'height': '100%', 'width': '100%' }}> 
+    <div className='landing-body' style={{ 'height': '100vh', 'width': '100vw' }}> 
       <TopNavbar />
       <LandingHero />
     </div>

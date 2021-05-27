@@ -9,10 +9,15 @@
 }
 
 .full-height-columns {
-  // 3.25rem is the navbar height variable. Ideally this would incorporate that
-  min-height: calc(100vh - ( 3.25rem - .75rem ) );
-  max-height: calc(100vh - ( 3.25rem - .75rem ) );
-  height: calc(100vh - ( 3.25rem - .75rem ) );
+  // 3.25rem is the navbar height variable.
+  // .75 is an adjustment for IE(?)
+  // Not WAD, still a small discrepancy in height b/w elements
+  min-height: calc(100vh -  #{$navbar-height} );
+  max-height: calc(100vh -  #{$navbar-height} );
+  height: calc(100vh -  #{$navbar-height} );
+  // min-height: calc(100vh - ( #{$navbar-height} - .75rem ) );
+  // max-height: calc(100vh - ( #{$navbar-height} - .75rem ) );
+  // height: calc(100vh - ( #{$navbar-height} - .75rem ) );
   display: flex;
   flex-direction: row;
   justify-content: stretch;
