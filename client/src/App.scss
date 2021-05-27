@@ -2,10 +2,22 @@
 @import "../node_modules/bulma/bulma.sass";
 
 .landing-body {
+  height: 100vh;
+  width: 100vw;
   background-image: url('./images/jakub-kapusnak-vnNFWKY7Tj4-unsplash.jpg');
   // Image alignment, scaling etc still needs tweaking
   // background-repeat: no-repeat;
   // background-position: center; 
+}
+
+.landing-body-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(160,160,160);
+    background: linear-gradient(180deg, rgba(160,160,160,.5) 0%, rgba(59,56,56,.75) 50%);
 }
 
 .full-height-columns {
@@ -23,7 +35,7 @@
   justify-content: stretch;
 }
 
-  // the funniest part of this copy pasta is that it works
+// the funniest part of this copy pasta is that it works
 .full-height-columns .column {
     overflow-y: auto;
 }

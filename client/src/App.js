@@ -4,9 +4,11 @@ import LandingHero from './LandingHero';
 
 function App() {
   return (
-    <div className='landing-body' style={{ 'height': '100vh', 'width': '100vw' }}> 
-      <TopNavbar />
-      <LandingHero />
+    <div className='landing-body'> 
+      <div className='landing-body-overlay'>
+        <TopNavbar />
+        <LandingHero />
+      </div>
     </div>
     // <Columns breakpoint='mobile' display='flex' alignItems='stretch' centered vCentered marginless>
     //   <Columns.Column display='flex' alignItems='center' size={6}>
