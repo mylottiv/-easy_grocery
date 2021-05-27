@@ -27,3 +27,6 @@ Easy to use, real-time grocery and inventory tracking and shopping app
 - Inventory
 - Grocery List
 - Login/User Profile
+
+## ISSUES:
+- Navbar + Content on landing page =/= full height by ~4px
