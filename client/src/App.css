@@ -287,7 +287,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 code,
 pre {
@@ -2074,6 +2074,7 @@ a.tag:hover {
 
 .title {
   color: #363636;
+  font-family: "Roboto", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125; }
@@ -6941,7 +6942,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-weight: 700 !important; }
 
 .is-family-primary {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }
+  font-family: "Montserrat", sans-serif !important; }
 
 .is-family-secondary {
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important; }
@@ -7759,8 +7760,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem; }
 
 .landing-body {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
   background-image: url("./images/jakub-kapusnak-vnNFWKY7Tj4-unsplash.jpg"); }
 
 .landing-body-overlay {

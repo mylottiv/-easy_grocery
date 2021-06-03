@@ -1,9 +1,15 @@
 // $primary: #ffaa55;
+// $family-primary: 'Roboto', sans-serif;
+$family-primary: 'Montserrat', sans-serif;
+// $family-secondary: 'Montserrat', sans-serif;
+$title-family: 'Roboto', sans-serif;
+// $subtitle-family: 'Montserrat', sans-serif;
 @import "../node_modules/bulma/bulma.sass";
 
+
 .landing-body {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-image: url('./images/jakub-kapusnak-vnNFWKY7Tj4-unsplash.jpg');
   // Image alignment, scaling etc still needs tweaking
   // background-repeat: no-repeat;
