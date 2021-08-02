@@ -1,32 +1,36 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './App.css';
+import Landing from './views/Landing';
+import Dashboard from './views/Dashboard';
 import TopNavbar from './TopNavbar';
-import LandingHero from './LandingHero';
 
 function App() {
   return (
-    <div className='landing-body'> 
-      <div className='landing-body-overlay'>
-        <TopNavbar />
-        <LandingHero />
+    <Router>
+      <div className='landing-body'> 
+        <div className='landing-body-overlay'>
+          <TopNavbar />
+          <Switch>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/inventory">
+              <div>Inventory</div>
+            </Route>
+            <Route path="/shopping">
+              <div>Shopping</div>
+            </Route>
+            <Route path="/">
+              <Landing />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
-    // <Columns breakpoint='mobile' display='flex' alignItems='stretch' centered vCentered marginless>
-    //   <Columns.Column display='flex' alignItems='center' size={6}>
-    //     <Heading weight='bold' size={4}>
-    //       EZ-Grocery
-    //     </Heading>
-    //   </Columns.Column>
-    //   <Columns.Column display='flex' alignItems='center' size={3}>
-        // <Button color='link'>
-        //   Login
-        // </Button>
-    //   </Columns.Column>
-    //   <Columns.Column display='flex' alignItems='center' size={3}>
-        // <Icon size='large'>
-    //       <img src={logo} alt='hamburger menu'/>
-    //     </Icon>
-    //   </Columns.Column>
-    // </Columns>
+    </Router>
   )
 }
 
