@@ -1,6 +1,6 @@
 import { Hero, Container, Heading, Box, Columns, Block, Button } from 'react-bulma-components';
 
-function LandingHero() {
+function Landing() {
     return (
         <Columns className='full-height-columns' vCentered marginless>
             <Columns.Column>
@@ -34,4 +34,4 @@ function LandingHero() {
     )
 }
 
-export default LandingHero;
+export default Landing;
