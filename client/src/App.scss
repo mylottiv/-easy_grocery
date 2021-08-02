@@ -6,14 +6,15 @@ $title-family: 'Roboto', sans-serif;
 // $subtitle-family: 'Montserrat', sans-serif;
 @import "../node_modules/bulma/bulma.sass";
 
-
 .landing-body {
   height: 100%;
   width: 100%;
   background-image: url('./images/jakub-kapusnak-vnNFWKY7Tj4-unsplash.jpg');
   // Image alignment, scaling etc still needs tweaking
-  // background-repeat: no-repeat;
-  // background-position: center; 
+  background-position: center center; 
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .landing-body-overlay {
@@ -22,21 +23,25 @@ $title-family: 'Roboto', sans-serif;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(160,160,160);
+    // background: rgb(160,160,160);
     background: linear-gradient(180deg, rgba(160,160,160,.5) 0%, rgba(59,56,56,.75) 50%);
+    background-position: center center; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .full-height-columns {
+  // Not WAD, still a small discrepancy in height b/w elements
+  // Only min-height seems needed now that implementing other views
+  min-height: calc(100vh -  #{$navbar-height} );
+  // max-height: calc(100vh -  #{$navbar-height} );
+  // height: calc(100vh -  #{$navbar-height} );
   // 3.25rem is the navbar height variable.
   // .75 is an adjustment for IE(?)
-  // Not WAD, still a small discrepancy in height b/w elements
-  min-height: calc(100vh -  #{$navbar-height} );
-  max-height: calc(100vh -  #{$navbar-height} );
-  height: calc(100vh -  #{$navbar-height} );
   // min-height: calc(100vh - ( #{$navbar-height} - .75rem ) );
   // max-height: calc(100vh - ( #{$navbar-height} - .75rem ) );
   // height: calc(100vh - ( #{$navbar-height} - .75rem ) );
-  display: flex;
   flex-direction: row;
   justify-content: stretch;
 }

@@ -9,7 +9,7 @@ function TopNavbar() {
     const dropdownOnClick = () => {setDropdownIsActive(!dropdownIsActive);}
 
     return (
-        <Navbar active={navbarIsActive} transparent>
+        <Navbar active={navbarIsActive} fixed="top" transparent>
             <Navbar.Brand>
             <Navbar.Item href='#'>
                 <Heading weight='bold' size={3}>
