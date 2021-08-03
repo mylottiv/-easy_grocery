@@ -1,114 +1,85 @@
-import { Hero, Container, Heading, Box, Columns, Block, Button } from 'react-bulma-components';
+import { Container, Heading, Box, Columns, Block, Media, Image, Content, Section } from 'react-bulma-components';
 
 function Dashboard() {
     return (
-        <Columns className='full-height-columns' vCentered marginless>
+        <Columns className='full-height-columns' vCentered marginless breakpoint="mobile">
             <Columns.Column>
                 <Box>
-                    <Hero size='halfheight'>
-                        <Hero.Header display='flex' justifyContent='center'>
-                            Lorem ipsum
-                        </Hero.Header>
-                        <Hero.Body>
+                    <Media>
+                        <Media.Item align="left">
+                            <Image 
+                                src="http://bulma.io/images/placeholders/128x128.png"
+                                size={64}
+                            />
+                        </Media.Item>
+                        <Media.Item align="center">
+                            <Content>
+                                <p>
+                                    <strong>Profile</strong>
+                                    <br />
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    <br />
+                                </p>
+                            </Content>
+                        </Media.Item>
+                    </Media>
+                </Box>
+            <Columns breakpoint="mobile">
+                <Columns.Column>
+                    <Box>
+                        <Section paddingless>
                             <Container>
-                                <Heading textAlign='center'>
-                                    Lorem ipsum dolor sit amet
+                                <Heading size={4}>
+                                    Inventory
                                 </Heading>
-                                <Block textAlign='center'>
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </Block>
-                                <Block display='flex' justifyContent='center'>
-                                    <Button color='success'>
-                                    Profile
-                                    </Button>
+                                <Heading size={6} subtitle>
+                                    <strong>Current:</strong>
+                                </Heading>
+                                <Block>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
                                 </Block>
                             </Container>
-                        </Hero.Body>
-                        <Hero.Footer display='flex' justifyContent='flex-end'>
-                            Massa eget egestas
-                        </Hero.Footer>
-                    </Hero>
-                </Box>
-            <Columns>
-                    <Columns.Column>
-                        <Box>
-                            <Hero size='halfheight'>
-                                <Hero.Header display='flex' justifyContent='center'>
-                                    Lorem ipsum
-                                </Hero.Header>
-                                <Hero.Body>
-                                    <Container>
-                                        <Heading textAlign='center'>
-                                            Lorem ipsum dolor sit amet
-                                        </Heading>
-                                        <Block textAlign='center'>
-                                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </Block>
-                                        <Block display='flex' justifyContent='center'>
-                                            <Button color='success'>
-                                            Inventory
-                                            </Button>
-                                        </Block>
-                                    </Container>
-                                </Hero.Body>
-                                <Hero.Footer display='flex' justifyContent='flex-end'>
-                                    Massa eget egestas
-                                </Hero.Footer>
-                            </Hero>
-                        </Box>
-                    </Columns.Column>
-                    <Columns.Column>
-                        <Box>
-                            <Hero size='halfheight'>
-                                <Hero.Header display='flex' justifyContent='center'>
-                                    Lorem ipsum
-                                </Hero.Header>
-                                <Hero.Body>
-                                    <Container>
-                                        <Heading textAlign='center'>
-                                            Lorem ipsum dolor sit amet
-                                        </Heading>
-                                        <Block textAlign='center'>
-                                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </Block>
-                                        <Block display='flex' justifyContent='center'>
-                                            <Button color='success'>
-                                            Shopping
-                                            </Button>
-                                        </Block>
-                                    </Container>
-                                </Hero.Body>
-                                <Hero.Footer display='flex' justifyContent='flex-end'>
-                                    Massa eget egestas
-                                </Hero.Footer>
-                            </Hero>
-                        </Box>
-                    </Columns.Column>
+                        </Section>
+                    </Box>
+                </Columns.Column>
+                <Columns.Column>
+                    <Box>
+                        <Section paddingless>
+                            <Container>
+                                <Heading size={4}>
+                                    Shopping
+                                </Heading>
+                                <Heading size={6} subtitle>
+                                    <strong>Current List:</strong>
+                                </Heading>
+                                <Block>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </Block>
+                            </Container>
+                        </Section>
+                    </Box>
+                </Columns.Column>
             </Columns>
                 <Box>
-                    <Hero size='halfheight'>
-                        <Hero.Header display='flex' justifyContent='center'>
-                            Lorem ipsum
-                        </Hero.Header>
-                        <Hero.Body>
-                            <Container>
-                                <Heading textAlign='center'>
-                                    Lorem ipsum dolor sit amet
-                                </Heading>
-                                <Block textAlign='center'>
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                </Block>
-                                <Block display='flex' justifyContent='center'>
-                                    <Button color='success'>
-                                        Defacto
-                                    </Button>
-                                </Block>
-                            </Container>
-                        </Hero.Body>
-                        <Hero.Footer display='flex' justifyContent='flex-end'>
-                            Massa eget egestas
-                        </Hero.Footer>
-                    </Hero>
+                    <Section paddingless>
+                        <Container>
+                            <Heading size={4}>
+                                Defacto
+                            </Heading>
+                            <Heading size={6} subtitle>
+                                <strong>Ipso Facto</strong>
+                            </Heading>
+                            <Block>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </Block>
+                        </Container>
+                    </Section>
                 </Box>
             </Columns.Column>
         </Columns>
