@@ -13,18 +13,21 @@ function App() {
     <Router>
       <div className='landing-body'> 
         <div className='landing-body-overlay'>
-          <TopNavbar />
           <Switch>
             <Route path="/dashboard">
+              <TopNavbar loggedIn />
               <Dashboard />
             </Route>
             <Route path="/inventory">
+              <TopNavbar loggedIn />
               <div>Inventory</div>
             </Route>
             <Route path="/shopping">
+              <TopNavbar loggedIn />
               <div>Shopping</div>
             </Route>
             <Route path="/">
+              <TopNavbar />
               <Landing />
             </Route>
           </Switch>

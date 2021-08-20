@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import {useState} from 'react';
 import { Navbar, Heading, Button } from 'react-bulma-components';
 import './App.css';
 
-function TopNavbar() {
+function TopNavbar({loggedIn = false}) {
 
     const [navbarIsActive, setNavbarIsActive] = useState(false);
     const [dropdownIsActive, setDropdownIsActive] = useState(false);
@@ -11,19 +12,19 @@ function TopNavbar() {
     return (
         <Navbar active={navbarIsActive} fixed="top" transparent>
             <Navbar.Brand>
-            <Navbar.Item href='#'>
-                <Heading weight='bold' size={3}>
-                    EZ-Grocery
-                </Heading>
-            </Navbar.Item>
-            <Navbar.Item>
-                <Button color='link'>
-                    Login
-                </Button>
-            </Navbar.Item>
-            <button type='button' className='hamburger-button' data-testid='burger-button' onClick={() => setNavbarIsActive(!navbarIsActive)}>
-                <Navbar.Burger />
-            </button>
+                <Navbar.Item href='#'>
+                    <Heading weight='bold' size={3}>
+                        EZ-Grocery
+                    </Heading>
+                </Navbar.Item>
+                <Navbar.Item>
+                    <Button color='link' >
+                        {(loggedIn) ? 'Profile' : 'Login'}
+                    </Button>
+                </Navbar.Item>
+                <button type='button' className='hamburger-button' data-testid='burger-button' onClick={() => setNavbarIsActive(!navbarIsActive)}>
+                    <Navbar.Burger />
+                </button>
             </Navbar.Brand>
             <Navbar.Menu>
                 <Navbar.Container>
@@ -46,5 +47,9 @@ function TopNavbar() {
             </Navbar.Menu>
         </Navbar>)
 }
+
+TopNavbar.propTypes = {
+    loggedIn: PropTypes.bool.isRequired
+  }
 
 export default TopNavbar

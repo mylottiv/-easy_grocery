@@ -33,7 +33,7 @@ $title-family: 'Roboto', sans-serif;
 
 .full-height-columns {
   // Not WAD, still a small discrepancy in height b/w elements
-  // Only min-height seems needed now that implementing other views
+  // * Only min-height seems needed now that implementing other views
   min-height: calc(100vh -  #{$navbar-height} );
   // max-height: calc(100vh -  #{$navbar-height} );
   // height: calc(100vh -  #{$navbar-height} );
