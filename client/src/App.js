@@ -6,6 +6,7 @@ import {
 import './App.css';
 import Landing from './views/Landing';
 import Dashboard from './views/Dashboard';
+import Inventory from './views/Inventory';
 import TopNavbar from './TopNavbar';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             </Route>
             <Route path="/inventory">
               <TopNavbar loggedIn />
-              <div>Inventory</div>
+              <Inventory />
             </Route>
             <Route path="/shopping">
               <TopNavbar loggedIn />

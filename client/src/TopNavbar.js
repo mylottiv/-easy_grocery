@@ -3,7 +3,7 @@ import {useState} from 'react';
 import { Navbar, Heading, Button } from 'react-bulma-components';
 import './App.css';
 
-function TopNavbar({loggedIn = false}) {
+function TopNavbar({loggedIn}) {
 
     const [navbarIsActive, setNavbarIsActive] = useState(false);
     const [dropdownIsActive, setDropdownIsActive] = useState(false);
@@ -48,8 +48,12 @@ function TopNavbar({loggedIn = false}) {
         </Navbar>)
 }
 
-TopNavbar.propTypes = {
-    loggedIn: PropTypes.bool.isRequired
+TopNavbar.defaultProps = {
+    loggedIn: false
+  }
+
+  TopNavbar.propTypes = {
+    loggedIn: PropTypes.bool
   }
 
 export default TopNavbar
