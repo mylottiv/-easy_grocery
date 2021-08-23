@@ -24,46 +24,46 @@ function Dashboard() {
                         </Media.Item>
                     </Media>
                 </Box>
-            <Columns breakpoint="mobile">
-                <Columns.Column>
-                    <Box>
-                        <Section paddingless>
-                            <Container>
-                                <Heading size={4}>
-                                    Inventory
-                                </Heading>
-                                <Heading size={6} subtitle>
-                                    <strong>Current:</strong>
-                                </Heading>
-                                <Block>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </Block>
-                            </Container>
-                        </Section>
-                    </Box>
-                </Columns.Column>
-                <Columns.Column>
-                    <Box>
-                        <Section paddingless>
-                            <Container>
-                                <Heading size={4}>
-                                    Shopping
-                                </Heading>
-                                <Heading size={6} subtitle>
-                                    <strong>Current List:</strong>
-                                </Heading>
-                                <Block>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </Block>
-                            </Container>
-                        </Section>
-                    </Box>
-                </Columns.Column>
-            </Columns>
+                <Columns breakpoint="mobile">
+                    <Columns.Column>
+                        <Box>
+                            <Section paddingless>
+                                <Container>
+                                    <Heading size={4}>
+                                        Inventory
+                                    </Heading>
+                                    <Heading size={6} subtitle>
+                                        <strong>Current:</strong>
+                                    </Heading>
+                                    <Block>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
+                                    </Block>
+                                </Container>
+                            </Section>
+                        </Box>
+                    </Columns.Column>
+                    <Columns.Column>
+                        <Box>
+                            <Section paddingless>
+                                <Container>
+                                    <Heading size={4}>
+                                        Shopping
+                                    </Heading>
+                                    <Heading size={6} subtitle>
+                                        <strong>Current List:</strong>
+                                    </Heading>
+                                    <Block>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
+                                    </Block>
+                                </Container>
+                            </Section>
+                        </Box>
+                    </Columns.Column>
+                </Columns>
                 <Box>
                     <Section paddingless>
                         <Container>

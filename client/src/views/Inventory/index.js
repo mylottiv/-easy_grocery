@@ -1,13 +1,15 @@
-import {useState} from 'react';
+// import {useState} from 'react';
+// import { Box, Columns, Heading, Panel, Menu, Tabs, Form } from 'react-bulma-components';
 import { Box, Columns, Heading, Panel, Menu, Tabs } from 'react-bulma-components';
+import ItemSlug from './ItemSlug';
 
 function Inventory() {
 
-    const [itemIsVisible, setitemIsVisible] = useState(false);
-    const menuOnClick = () => setitemIsVisible(!itemIsVisible)
+    // const [itemIsVisible, setitemIsVisible] = useState(false);
+    // const menuOnClick = () => setitemIsVisible(!itemIsVisible)
 
     return (
-        <Columns className='full-height-columns' vCentered marginless>
+        <Columns className='full-height-columns' vCentered marginless breakpoint='mobile'>
             <Columns.Column>
                 <Box>
                     <Heading>
@@ -33,21 +35,8 @@ function Inventory() {
                         </Tabs>
                         <Menu>
                             <Menu.List>
-                                <Menu.List.Item renderAs='div'>
-                                    <Panel.Block
-                                        
-                                        onClick={menuOnClick}
-                                    >
-                                        <Columns.Column>
-                                            Pasta
-                                            <Menu.List className={(itemIsVisible) ? '' : 'is-hidden'}>
-                                                <Menu.List.Item renderAs='div'>Fusili</Menu.List.Item>
-                                                <Menu.List.Item renderAs='div'>Penne</Menu.List.Item>
-                                                <Menu.List.Item renderAs='div'>Spaghetti</Menu.List.Item>
-                                            </Menu.List>
-                                        </Columns.Column>
-                                    </Panel.Block>
-                                </Menu.List.Item>
+                                <ItemSlug itemName='Pasta' brands={['fusili', 'penne', 'spaghetti']} />
+                                <ItemSlug itemName='Bread' brands={['baguette', 'pita', 'tortilla']} />
                             </Menu.List>
                         </Menu>
                     </Panel>

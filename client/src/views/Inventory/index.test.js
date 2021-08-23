@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Inventory from './Inventory';
+import Inventory from '.';
 
 it('renders inventory page panel component & dummy items', () => {
   render(<Inventory />);
@@ -11,5 +11,3 @@ it('renders inventory page panel component & dummy items', () => {
   expect(screen.getByText("Cleaning")).toBeInTheDocument();
   expect(screen.getByText("Pasta")).toBeInTheDocument();
 });
-
-// Click tests next for the tabs and Item types
