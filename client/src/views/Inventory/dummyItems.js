@@ -1,42 +1,106 @@
 export default {
     "Pantry": [
         {
-            itemName: 'Pasta',
-            brands: ['fusili', 'penne', 'spaghetti']
+            itemName: 'Fusili',
+            category: 'Pasta'
         },
         {
-            itemName: "Bread",
-            brands: ['baguette', 'pita', 'tortilla']
+            itemName: 'Penne',
+            category: 'Pasta'
+        },
+        {
+            itemName: 'Spaghetti',
+            category: 'Pasta'
+        },
+        {
+            itemName: 'Baguette',
+            category: 'Bread'
+        },
+        {
+            itemName: 'Pita',
+            category: 'Bread'
+        },
+        {
+            itemName: 'Tortilla',
+            category: 'Bread'
         }
     ],
     "Fresh": [
         {
-            itemName: 'Fruit',
-            brands: ['apple', 'pear', 'grape']
+            itemName: 'Apple',
+            category: 'Fruit'
         },
         {
-            itemName: "Veggies",
-            brands: ['potato', 'onion', 'tomato']
-        }
+            itemName: 'Pear',
+            category: 'Fruit'
+        },
+        {
+            itemName: 'Grape',
+            category: 'Fruit'
+        },
+        {
+            itemName: 'Potato',
+            category: 'Veggies'
+        },
+        {
+            itemName: 'Onion',
+            category: 'Veggies'
+        },
+        {
+            itemName: 'Tomato',
+            category: 'Veggies'
+        },
     ],
     "Frozen": [
         {
-            itemName: 'Ice Cream',
-            brands: ['mint chocolate chip', 'vanilla', 'cookie dough']
+            itemName: 'Mint Chocolate Chip',
+            category: "Ice Cream"
         },
         {
-            itemName: "Veggies",
-            brands: ['okra', 'peas', 'corn']
+            itemName: 'Vanilla',
+            category: "Ice Cream"
+        },
+        {
+            itemName: 'Cookie Dough',
+            category: "Ice Cream"
+        },
+        {
+            itemName: 'Okra',
+            category: "Veggies"
+        },
+        {
+            itemName: 'Peas',
+            category: "Veggies"
+        },
+        {
+            itemName: 'Corn',
+            category: "Veggies"
         }
     ],
     "Cleaning": [
         {
-            itemName: 'Solutions',
-            brands: ['vinegar', 'toilet bowl cleaner', 'sanitizer']
+            itemName: 'Vinegar',
+            category: 'Solutions'
         },
         {
-            itemName: "Supplies",
-            brands: ['paper towels', 'toilet paper', 'sponges']
-        }
+            itemName: 'Toilet Bowl Cleaner',
+            category: 'Solutions'
+        },
+        {
+            itemName: 'Sanitizer',
+            category: 'Solutions'
+        },
+        {
+            itemName: 'Paper Towels',
+            category: 'Supplies'
+        },
+        {
+            itemName: 'Toilet Paper',
+            category: 'Supplies'
+        },
+        {
+            itemName: 'Sponges',
+            category: 'Supplies'
+        },
     ],
 };

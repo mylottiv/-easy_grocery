@@ -13,6 +13,7 @@ function ItemPanel() {
             <Panel.Header>
                 Items
             </Panel.Header>
+            {/* need to switch to dropdown style, final "categories" will be determinant on API used */}
             <Tabs size='small' type='toggle' fullwidth>
                 {Object.keys(dummyItems).map(
                     (tabName) => (
@@ -25,7 +26,7 @@ function ItemPanel() {
             <Menu>
                 <Menu.List>
                     {dummyItems[selectedTab].map(
-                        ({itemName, brands}) => (<ItemSlug itemName={itemName} brands={brands} key={itemName}/>)
+                        ({itemName, category}) => (<ItemSlug itemName={itemName} category={category} key={itemName}/>)
                     )}
                 </Menu.List>
             </Menu>        
