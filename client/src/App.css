@@ -7886,3 +7886,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .navbar-item.has-dropdown.is-active .navbar-dropdown {
   display: block; }
+
+.input-size-very-small {
+  border-radius: 1px;
+  font-size: .75rem; }
+
+.date-input::-webkit-datetime-edit-text {
+  padding: 0; }
