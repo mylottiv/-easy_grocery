@@ -3,7 +3,7 @@ import {useState} from 'react';
 import { Columns, Button, Menu, Panel, Form } from 'react-bulma-components';
 import ItemMenu from './ItemMenu';
 
-function ItemSlug({itemName, category}) {
+function ItemSlug({itemName, category, listType}) {
 
     const [itemIsVisible, setItemIsVisible] = useState(false);
     const menuOnClick = () => setItemIsVisible(!itemIsVisible)
@@ -21,7 +21,7 @@ function ItemSlug({itemName, category}) {
                         <Columns.Column display='flex-row' justifyContent='flex-end' className='pr-0 pl-0' size='one-third'>
                             <Form.Field >                            
                                 <Form.Control>
-                                    <span className='pr-2'>On List</span>
+                                    <span className='pr-2'>{(listType === 'Inventory') ? 'On List' : 'Got'}</span>
                                     <Form.Checkbox />
                                 </Form.Control>
                             </Form.Field>
@@ -32,11 +32,12 @@ function ItemSlug({itemName, category}) {
             </Panel.Block>
         </Menu.List.Item>
     )
-}
+};
 
 ItemSlug.propTypes = {
     itemName: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired
-}
+    category: PropTypes.string.isRequired,
+    listType: PropTypes.string.isRequired
+};
 
 export default ItemSlug

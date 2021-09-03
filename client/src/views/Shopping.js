@@ -1,20 +1,20 @@
 import { Box, Columns, Heading} from 'react-bulma-components';
-import ItemPanel from './ItemPanel';
+import ItemPanel from './Inventory/ItemPanel';
 
-function Inventory() {
+function Shopping() {
 
     return (
         <Columns className='full-height-columns' vCentered marginless breakpoint='mobile'>
             <Columns.Column>
                 <Box>
                     <Heading>
-                        Inventory
+                        Shopping List
                     </Heading>
-                    <ItemPanel viewType='Inventory' />
+                    <ItemPanel viewType='Shopping' />
                 </Box>
             </Columns.Column>
         </Columns>
     )
 }
 
-export default Inventory;
+export default Shopping;

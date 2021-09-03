@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import ItemSlug from './ItemSlug';
 
-it('renders item slug passed dummy name and category', () => {
-    render(<ItemSlug itemName='Fusili' category='Pasta'/>);
+it('renders item slug for inventory view passed dummy name and category', () => {
+    render(<ItemSlug itemName='Fusili' category='Pasta' listType='Inventory' />);
     expect(screen.getByText("Fusili")).toBeInTheDocument();
     expect(screen.getByText("Pasta")).toBeInTheDocument();
-  });
+    expect(screen.getByText("On List")).toBeInTheDocument();
+});
+
+it('renders item slug for shopping view passed dummy name and category', () => {
+    render(<ItemSlug itemName='Fusili' category='Pasta' listType='Shopping' />);
+    expect(screen.getByText("Fusili")).toBeInTheDocument();
+    expect(screen.getByText("Pasta")).toBeInTheDocument();
+    expect(screen.getByText("Got")).toBeInTheDocument();
+});

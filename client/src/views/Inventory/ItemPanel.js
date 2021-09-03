@@ -1,14 +1,16 @@
 import {useState} from 'react';
+import PropTypes from 'prop-types';
 import {Panel, Menu, Dropdown, Icon, Level} from 'react-bulma-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import ItemSlug from './ItemSlug';
-import dummyItems from './dummyItems';
+import dummyItems from '../../dummyItems';
 
-function ItemPanel() {
+function ItemPanel({viewType}) {
 
-    const [selectedTab, setSelectedTab] = useState('Pantry');
+    const [selectedTab, setSelectedTab] = useState((viewType === 'Inventory') ? 'Pantry' : 'Shopping');
     const tabOnClick = (tabName) => setSelectedTab(tabName);
+    const dummyData = (viewType === 'Inventory') ? dummyItems[selectedTab] : dummyItems.Shopping;
 
     return (
         <Panel color='warning'>
@@ -16,7 +18,7 @@ function ItemPanel() {
                 Items
             </Panel.Header>
             {/* final "categories" will be determinant on API used */}
-            <Level justifyContent='center' breakpoint='mobile'>
+            <Level justifyContent='center' className='mt-4 mb-0' breakpoint='mobile'>
                 <Dropdown
                     closeOnSelect
                     icon={<Icon size='small'><FontAwesomeIcon icon={faAngleDown} /></Icon>}
@@ -34,13 +36,17 @@ function ItemPanel() {
             </Level>
             <Menu>
                 <Menu.List>
-                    {dummyItems[selectedTab].map(
-                        ({itemName, category}) => (<ItemSlug itemName={itemName} category={category} key={itemName}/>)
+                    {dummyData.map(
+                        ({itemName, category}) => (<ItemSlug itemName={itemName} category={category} key={itemName} listType={viewType} />)
                     )}
                 </Menu.List>
             </Menu>        
         </Panel>
     )
 }
+
+ItemPanel.propTypes = {
+    viewType: PropTypes.string.isRequired
+};
 
 export default ItemPanel

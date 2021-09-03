@@ -103,4 +103,30 @@ export default {
             category: 'Supplies'
         },
     ],
+    "Shopping": [
+        {
+            itemName: 'Apple',
+            category: 'Fruit'
+        },
+        {
+            itemName: 'Tomato',
+            category: 'Veggies'
+        },
+        {
+            itemName: 'Spaghetti',
+            category: 'Pasta'
+        },
+        {
+            itemName: 'Vinegar',
+            category: 'Solutions'
+        },
+        {
+            itemName: 'Peas',
+            category: "Veggies"
+        },
+        {
+            itemName: 'Mint Chocolate Chip',
+            category: "Ice Cream"
+        },
+    ]
 };
