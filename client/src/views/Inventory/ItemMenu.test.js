@@ -1,12 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import ItemMenu from './ItemMenu';
+import dummyData from '../../dummyItems';
 
-it('renders item menu passed dummy category', () => {
-    render(<ItemMenu category='Pasta'/>);
+const {variables} = dummyData
+
+it('renders item menu in inventory viewpassed dummy properties', () => {
+    render(<ItemMenu properties={{...variables, category: 'Pasta'}}  displayType='Inventory' />);
     expect(screen.getByText("Category")).toBeInTheDocument();
     expect(screen.getByText("Pasta")).toBeInTheDocument();
-    expect(screen.getByText("Quantity")).toBeInTheDocument();
-    expect(screen.getByText("10 / 42")).toBeInTheDocument();
 });
 
-// Don't Froget to write Click Tests!
+// Renders shopping item menu
+
+// Don't Froget to write Click Tests for Edit Mode!

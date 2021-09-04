@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import {useState} from 'react';
-import { Columns, Button, Menu, Form, Tag } from 'react-bulma-components';
+import { Columns, Button, Menu, Form } from 'react-bulma-components';
+import TagGroup from './TagGroup';
+import ItemQuantity from './ItemQuantity';
 
-function ItemMenu({category, isVisible}) {
+function ItemMenu({properties, isVisible, displayType}) {
 
     const [editMode, setEditMode] = useState(false);
     const editOnClick = () => setEditMode(!editMode);
@@ -14,33 +16,10 @@ function ItemMenu({category, isVisible}) {
                     <span>Category</span>
                 </Columns.Column>
                 <Columns.Column display='flex' flexDirection='row' justifyContent='flex-end'>
-                    {category}
+                    {properties.category}
                 </Columns.Column>
             </Columns>
-            <Columns multiline breakpoint='mobile'>
-                <Columns.Column display='flex' flexDirection='column' justifyContent='center'>
-                    <span>Quantity</span>
-                </Columns.Column>
-                <Columns.Column display='flex' flexDirection='row' justifyContent='flex-end' alignItems='center'>
-                    {editMode 
-                    ?
-                    <>
-                        <Form.Field className='mb-0'>
-                            <Form.Control>
-                                <Form.Input size='small' textSize={6} defaultValue={10} />
-                            </Form.Control>
-                        </Form.Field>
-                            <span>/</span>
-                        <Form.Field className='mb-0'>
-                            <Form.Control>
-                                <Form.Input size='small' textSize={6} defaultValue={42} /> 
-                            </Form.Control>
-                        </Form.Field>
-                    </>
-                    : "10 / 42"}
-
-                </Columns.Column>
-            </Columns>
+            <ItemQuantity editMode currentQuantity={properties.currentQuantity} desiredQuantity={properties.desiredQuantity} />
             <Columns multiline breakpoint='mobile'>
                 <Columns.Column display='flex' flexDirection='column' justifyContent='center'>
                     <span>Price</span>
@@ -68,37 +47,7 @@ function ItemMenu({category, isVisible}) {
                     : "10/12/2021"}
                 </Columns.Column>
             </Columns>
-            <Columns multiline breakpoint='mobile'>
-                <Columns.Column>
-                    <span>Tags</span>
-                </Columns.Column>
-                <Columns.Column display='flex' flexDirection='column' align-items='center'>
-                    <Tag.Group hasAddons display='flex' flexDirection='row' align-items='center' mb='1'>
-                        <Tag color="success" className='m-0'>
-                            My Tag
-                        </Tag>
-                        <Tag remove className='m-0' />
-                    </Tag.Group>
-                    <Tag.Group hasAddons display='flex' flexDirection='row' align-items='center' mb='1'>
-                        <Tag color="warning" className='m-0'>
-                            Tag 2
-                        </Tag>
-                        <Tag remove className='m-0' />
-                    </Tag.Group>
-                    <Tag.Group hasAddons display='flex' flexDirection='row' align-items='center' mb='1'>
-                        <Tag color="danger" className='m-0'>
-                            Tag 3
-                        </Tag>
-                        <Tag remove className='m-0' />
-                    </Tag.Group>
-                    {editMode &&
-                    <Form.Field>
-                        <Form.Control>
-                            <Form.Label>Add Tag</Form.Label><Form.Input size='small' textSize={6} />
-                        </Form.Control>
-                    </Form.Field>}
-                </Columns.Column>
-            </Columns>
+            {(displayType === 'Inventory') && <TagGroup editMode />}
             <Button onClick={editOnClick}>
                 Edit
             </Button>
@@ -111,8 +60,16 @@ ItemMenu.defaultProps = {
 }
 
 ItemMenu.propTypes = {
-    category: PropTypes.string.isRequired,
-    isVisible: PropTypes.bool
+    isVisible: PropTypes.bool,
+    displayType: PropTypes.string.isRequired,
+    properties: PropTypes.shape({ 
+        category: PropTypes.string.isRequired,
+        currentQuantity: PropTypes.number.isRequired,
+        desiredQuantity: PropTypes.number.isRequired,
+        price: PropTypes.string.isRequired,
+        expirationDateStatic: PropTypes.string.isRequired,
+        expirationDateEdit: PropTypes.string.isRequired
+    }).isRequired
 }
 
 export default ItemMenu;

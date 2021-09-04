@@ -3,7 +3,7 @@ import {useState} from 'react';
 import { Columns, Button, Menu, Panel, Form } from 'react-bulma-components';
 import ItemMenu from './ItemMenu';
 
-function ItemSlug({itemName, category, listType}) {
+function ItemSlug({itemName, properties, listType}) {
 
     const [itemIsVisible, setItemIsVisible] = useState(false);
     const menuOnClick = () => setItemIsVisible(!itemIsVisible)
@@ -27,7 +27,7 @@ function ItemSlug({itemName, category, listType}) {
                             </Form.Field>
                         </Columns.Column>
                     </Columns>
-                    <ItemMenu isVisible={itemIsVisible} category={category} />
+                    <ItemMenu isVisible={itemIsVisible} properties={properties} displayType={listType} />
                 </Columns.Column>
             </Panel.Block>
         </Menu.List.Item>
@@ -36,8 +36,15 @@ function ItemSlug({itemName, category, listType}) {
 
 ItemSlug.propTypes = {
     itemName: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-    listType: PropTypes.string.isRequired
+    listType: PropTypes.string.isRequired,
+    properties: PropTypes.shape({ 
+        category: PropTypes.string.isRequired,
+        currentQuantity: PropTypes.number.isRequired,
+        desiredQuantity: PropTypes.number.isRequired,
+        price: PropTypes.string.isRequired,
+        expirationDateStatic: PropTypes.string.isRequired,
+        expirationDateEdit: PropTypes.string.isRequired
+    }).isRequired
 };
 
 export default ItemSlug

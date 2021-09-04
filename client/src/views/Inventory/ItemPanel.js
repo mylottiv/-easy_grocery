@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {Panel, Menu, Dropdown, Icon, Level} from 'react-bulma-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import ItemSlug from './ItemSlug';
 import dummyItems from '../../dummyItems';
+import ItemSlug from './ItemSlug';
 
 function ItemPanel({viewType}) {
 
@@ -19,7 +19,7 @@ function ItemPanel({viewType}) {
             </Panel.Header>
             {/* final "categories" will be determinant on API used */}
             <Level justifyContent='center' className='mt-4 mb-0' breakpoint='mobile'>
-                <Dropdown
+                {(viewType === 'Inventory') && <Dropdown
                     closeOnSelect
                     icon={<Icon size='small'><FontAwesomeIcon icon={faAngleDown} /></Icon>}
                     onChange={tabOnClick}
@@ -32,12 +32,12 @@ function ItemPanel({viewType}) {
                             </Dropdown.Item>
                         )
                     )}
-                </Dropdown>
+                </Dropdown>}
             </Level>
             <Menu>
                 <Menu.List>
                     {dummyData.map(
-                        ({itemName, category}) => (<ItemSlug itemName={itemName} category={category} key={itemName} listType={viewType} />)
+                        ({itemName, category}) => (<ItemSlug itemName={itemName} properties={{...dummyItems.variables, category}} key={itemName} listType={viewType} />)
                     )}
                 </Menu.List>
             </Menu>        
