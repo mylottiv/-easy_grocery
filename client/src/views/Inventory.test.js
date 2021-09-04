@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Inventory from '.';
+import Inventory from './Inventory';
 
 it('renders inventory page panel component & dummy items', () => {
   render(<Inventory />);

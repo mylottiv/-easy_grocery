@@ -1,5 +1,5 @@
 import { Box, Columns, Heading} from 'react-bulma-components';
-import ItemPanel from './Inventory/ItemPanel';
+import ItemPanel from '../components/ItemPanel';
 
 function Shopping() {
 
