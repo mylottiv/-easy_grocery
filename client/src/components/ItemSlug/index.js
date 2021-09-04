@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {useState} from 'react';
 import { Columns, Button, Menu, Panel, Form } from 'react-bulma-components';
-import ItemMenu from './ItemMenu';
+import ItemMenu from './Menu';
 
 function ItemSlug({itemName, properties, listType}) {
 

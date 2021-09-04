@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import dummyData from '../../dummyItems'
-import ItemQuantity from './ItemQuantity';
+import ItemQuantity from './Quantity';
 
 const {currentQuantity, desiredQuantity} = dummyData.variables;
 

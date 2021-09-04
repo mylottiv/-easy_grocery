@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import {useState} from 'react';
 import { Columns, Button, Menu, Form } from 'react-bulma-components';
 import TagGroup from './TagGroup';
-import ItemQuantity from './ItemQuantity';
+import ItemQuantity from './Quantity';
 
 function ItemMenu({properties, isVisible, displayType}) {
 

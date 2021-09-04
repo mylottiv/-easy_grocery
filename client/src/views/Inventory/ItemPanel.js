@@ -4,7 +4,7 @@ import {Panel, Menu, Dropdown, Icon, Level} from 'react-bulma-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import dummyItems from '../../dummyItems';
-import ItemSlug from './ItemSlug';
+import ItemSlug from '../../components/ItemSlug';
 
 function ItemPanel({viewType}) {
 

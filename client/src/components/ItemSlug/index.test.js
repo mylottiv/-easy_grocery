@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ItemSlug from './ItemSlug';
+import ItemSlug from '.';
 import dummyData from '../../dummyItems'
 
 const {variables} = dummyData;
