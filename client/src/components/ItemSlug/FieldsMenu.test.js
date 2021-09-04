@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import ItemMenu from './Menu';
+import FieldsMenu from './FieldsMenu';
 import dummyData from '../../dummyItems';
 
 const {variables} = dummyData
 
 it('renders item menu in inventory viewpassed dummy properties', () => {
-    render(<ItemMenu properties={{...variables, category: 'Pasta'}}  displayType='Inventory' />);
+    render(<FieldsMenu properties={{...variables, category: 'Pasta'}}  displayType='Inventory' />);
     expect(screen.getByText("Category")).toBeInTheDocument();
     expect(screen.getByText("Pasta")).toBeInTheDocument();
 });

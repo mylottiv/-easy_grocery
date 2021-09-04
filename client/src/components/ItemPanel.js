@@ -25,7 +25,7 @@ function ItemPanel({viewType}) {
                     onChange={tabOnClick}
                     label={`Category: ${selectedTab}`}
                 >
-                    {Object.keys(dummyItems).map(
+                    {Object.keys(dummyItems).filter((key) => !['variables', 'Shopping'].includes(key)).map(
                         (tabName) => (
                             <Dropdown.Item renderAs='a' active={(selectedTab === tabName)} value={tabName} key={tabName}>
                                 {tabName}
