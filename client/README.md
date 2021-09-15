@@ -1,7 +1,7 @@
 # Client To-Do & Issues
 
 ## TODO
-- ### [ ] Create Login/Profile Page
+- ### [ ] Create Login Page
 - ### [ ] Normalize and Lift Dummy State (redux probably)
 - ### [ ] Functional Navigation Links
 - ### [ ] Theme Support (context probably)

@@ -6,6 +6,7 @@ import {
 import './App.css';
 import Landing from './views/Landing';
 import Dashboard from './views/Dashboard';
+import Profile from './views/Profile';
 import Inventory from './views/Inventory';
 import Shopping from './views/Shopping';
 import TopNavbar from './components/TopNavbar';
@@ -19,6 +20,10 @@ function App() {
             <Route path="/dashboard">
               <TopNavbar loggedIn />
               <Dashboard />
+            </Route>
+            <Route path="/profile">
+              <TopNavbar loggedIn />
+              <Profile />
             </Route>
             <Route path="/inventory">
               <TopNavbar loggedIn />
