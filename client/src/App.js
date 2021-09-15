@@ -8,7 +8,7 @@ import Landing from './views/Landing';
 import Dashboard from './views/Dashboard';
 import Inventory from './views/Inventory';
 import Shopping from './views/Shopping';
-import TopNavbar from './TopNavbar';
+import TopNavbar from './components/TopNavbar';
 
 function App() {
   return (

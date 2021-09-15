@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {useState} from 'react';
 import { Navbar, Heading, Button } from 'react-bulma-components';
-import './App.css';
+import '../App.css';
 
 function TopNavbar({loggedIn}) {
 
