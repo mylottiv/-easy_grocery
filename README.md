@@ -9,9 +9,9 @@ Easy to use, real-time grocery and inventory tracking and shopping app
 ## TODO:
 - ### [ ] MOBILE FIRST
 - ### [ ] Develop Front End (w/Server State)
+- ### [ ] API Integration for recipe cookbooks
 - ### [ ] Implement Knex for RMDB backend
 - ### [ ] Auth0 Authentication
-- ### [ ] API Integration for recipe cookbooks
 - ### [ ] Websocket implementation for live list updates (stretch)
 
 ## Dependencies:
