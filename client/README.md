@@ -1,9 +1,10 @@
 # Client To-Do & Issues
 
 ## TODO
-- ### [ ] Create Login Page
+- ### [X] Create Login Page (Placeholder, will use Auth0 universal login)
 - ### [ ] Normalize and Lift Dummy State (redux probably)
 - ### [ ] Functional Navigation Links
+- ### [ ] Click Tests for relevant components
 - ### [ ] Theme Support (context probably)
 
 ## Issues

@@ -9,6 +9,7 @@ import Dashboard from './views/Dashboard';
 import Profile from './views/Profile';
 import Inventory from './views/Inventory';
 import Shopping from './views/Shopping';
+import Login from './views/Login';
 import TopNavbar from './components/TopNavbar';
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
             <Route path="/shopping">
               <TopNavbar loggedIn />
               <Shopping />
+            </Route>
+            <Route path="/login">
+              <TopNavbar />
+              <Login />
             </Route>
             <Route path="/">
               <TopNavbar />
