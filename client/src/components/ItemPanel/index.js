@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {Panel, Menu, Dropdown, Icon, Level} from 'react-bulma-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import dummyItems from '../dummyItems';
-import ItemSlug from './ItemSlug';
+import dummyItems from '../../dummyItems';
+import ItemSlug from '../ItemSlug';
 
 function ItemPanel({viewType}) {
 

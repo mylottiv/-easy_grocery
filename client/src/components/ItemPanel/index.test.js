@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ItemPanel from './ItemPanel';
+import ItemPanel from '.';
 
 it('renders item panel for inventory view with dummy name and brands', () => {
     render(<ItemPanel viewType='Inventory' />);
