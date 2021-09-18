@@ -1,16 +1,14 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
-import {Panel, Menu, Dropdown, Icon, Level} from 'react-bulma-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import {Panel, Menu} from 'react-bulma-components';
 import dummyItems from '../../dummyItems';
+import Navbar from './Navbar';
 import ItemSlug from '../ItemSlug';
 
 function ItemPanel({viewType}) {
 
-    const [selectedTab, setSelectedTab] = useState((viewType === 'Inventory') ? 'Pantry' : 'Shopping');
-    const tabOnClick = (tabName) => setSelectedTab(tabName);
-    const dummyData = (viewType === 'Inventory') ? dummyItems[selectedTab] : dummyItems.Shopping;
+    const [currentCategory, setCurrentCategory] = useState((viewType === 'Inventory') ? 'Pantry' : 'Shopping');
+    const dummyData = (viewType === 'Inventory') ? dummyItems[currentCategory] : dummyItems.Shopping;
 
     return (
         <Panel color='warning'>
@@ -18,26 +16,20 @@ function ItemPanel({viewType}) {
                 Items
             </Panel.Header>
             {/* final "categories" will be determinant on API used */}
-            <Level justifyContent='center' className='mt-4 mb-0' breakpoint='mobile'>
-                {(viewType === 'Inventory') && <Dropdown
-                    closeOnSelect
-                    icon={<Icon size='small'><FontAwesomeIcon icon={faAngleDown} /></Icon>}
-                    onChange={tabOnClick}
-                    label={`Category: ${selectedTab}`}
-                >
-                    {Object.keys(dummyItems).filter((key) => !['variables', 'Shopping'].includes(key)).map(
-                        (tabName) => (
-                            <Dropdown.Item renderAs='a' active={(selectedTab === tabName)} value={tabName} key={tabName}>
-                                {tabName}
-                            </Dropdown.Item>
-                        )
-                    )}
-                </Dropdown>}
-            </Level>
+            {(viewType === 'Inventory') && <Navbar 
+                categories={Object.keys(dummyItems)} 
+                selectedCategory={currentCategory} 
+                onChange={(tabName) => setCurrentCategory(tabName)}
+                />}
             <Menu>
                 <Menu.List>
                     {dummyData.map(
-                        ({itemName, category}) => (<ItemSlug itemName={itemName} properties={{...dummyItems.variables, category}} key={itemName} listType={viewType} />)
+                        ({itemName, category}) => (
+                            <ItemSlug 
+                            itemName={itemName} 
+                            properties={{...dummyItems.variables, category}} 
+                            key={itemName} 
+                            listType={viewType} />)
                     )}
                 </Menu.List>
             </Menu>        
