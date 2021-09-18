@@ -17,7 +17,7 @@ function Login() {
                                 </Block>
                                 <Block display='flex' justifyContent='center'>
                                     <Button color='success'>
-                                        Login
+                                        Login Button
                                     </Button>
                                 </Block>
                             </Container>
