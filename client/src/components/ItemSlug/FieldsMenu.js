@@ -15,10 +15,10 @@ function FieldsMenu({properties, isVisible, displayType}) {
         <Menu.List display={(isVisible) ? 'block' : 'hidden'}>
             <Columns multiline breakpoint='mobile'>
                 <Columns.Column display='flex' flexDirection='column' justifyContent='center'>
-                    <span>Category</span>
+                    <span>Type</span>
                 </Columns.Column>
                 <Columns.Column display='flex' flexDirection='row' justifyContent='flex-end'>
-                    {properties.category}
+                    <span>{properties.type}</span>
                 </Columns.Column>
             </Columns>
             <Quantity 
@@ -52,7 +52,7 @@ FieldsMenu.propTypes = {
     isVisible: PropTypes.bool,
     displayType: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
-        category: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
         currentQuantity: PropTypes.number.isRequired,
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,

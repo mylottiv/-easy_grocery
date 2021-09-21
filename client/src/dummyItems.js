@@ -2,138 +2,131 @@ export default {
     "Pantry": [
         {
             itemName: 'Fusili',
-            category: 'Pasta'
+            type: 'Pasta'
         },
         {
             itemName: 'Penne',
-            category: 'Pasta'
+            type: 'Pasta'
         },
         {
             itemName: 'Spaghetti',
-            category: 'Pasta'
+            type: 'Pasta'
         },
         {
             itemName: 'Baguette',
-            category: 'Bread'
+            type: 'Bread'
         },
         {
             itemName: 'Pita',
-            category: 'Bread'
+            type: 'Bread'
         },
         {
             itemName: 'Tortilla',
-            category: 'Bread'
+            type: 'Bread'
         }
     ],
     "Fresh": [
         {
             itemName: 'Apple',
-            category: 'Fruit'
+            type: 'Fruit'
         },
         {
             itemName: 'Pear',
-            category: 'Fruit'
+            type: 'Fruit'
         },
         {
             itemName: 'Grape',
-            category: 'Fruit'
+            type: 'Fruit'
         },
         {
             itemName: 'Potato',
-            category: 'Veggies'
+            type: 'Veggies'
         },
         {
             itemName: 'Onion',
-            category: 'Veggies'
+            type: 'Veggies'
         },
         {
             itemName: 'Tomato',
-            category: 'Veggies'
+            type: 'Veggies'
         },
     ],
     "Frozen": [
         {
             itemName: 'Mint Chocolate Chip',
-            category: "Ice Cream"
+            type: "Ice Cream"
         },
         {
             itemName: 'Vanilla',
-            category: "Ice Cream"
+            type: "Ice Cream"
         },
         {
             itemName: 'Cookie Dough',
-            category: "Ice Cream"
+            type: "Ice Cream"
         },
         {
             itemName: 'Okra',
-            category: "Veggies"
+            type: "Veggies"
         },
         {
             itemName: 'Peas',
-            category: "Veggies"
+            type: "Veggies"
         },
         {
             itemName: 'Corn',
-            category: "Veggies"
+            type: "Veggies"
         }
     ],
     "Cleaning": [
         {
             itemName: 'Vinegar',
-            category: 'Solutions'
+            type: 'Solutions'
         },
         {
             itemName: 'Toilet Bowl Cleaner',
-            category: 'Solutions'
+            type: 'Solutions'
         },
         {
             itemName: 'Sanitizer',
-            category: 'Solutions'
+            type: 'Solutions'
         },
         {
             itemName: 'Paper Towels',
-            category: 'Supplies'
+            type: 'Supplies'
         },
         {
             itemName: 'Toilet Paper',
-            category: 'Supplies'
+            type: 'Supplies'
         },
         {
             itemName: 'Sponges',
-            category: 'Supplies'
+            type: 'Supplies'
         },
     ],
     "Shopping": [
         {
             itemName: 'Apple',
-            category: 'Fruit'
+            type: 'Fruit'
         },
         {
             itemName: 'Tomato',
-            category: 'Veggies'
+            type: 'Veggies'
         },
         {
             itemName: 'Spaghetti',
-            category: 'Pasta'
+            type: 'Pasta'
         },
         {
             itemName: 'Vinegar',
-            category: 'Solutions'
+            type: 'Solutions'
         },
         {
             itemName: 'Peas',
-            category: "Veggies"
+            type: "Veggies"
         },
         {
             itemName: 'Mint Chocolate Chip',
-            category: "Ice Cream"
+            type: "Ice Cream"
         },
     ],
-    "variables": {
-        currentQuantity: 10,
-        desiredQuantity: 42,
-        price: '1.52',
-        expirationDateStatic: '10/12/2021',
-        expirationDateEdit: '2021-10-12'
-    }
 };

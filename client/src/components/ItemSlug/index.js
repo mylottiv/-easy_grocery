@@ -38,7 +38,7 @@ ItemSlug.propTypes = {
     itemName: PropTypes.string.isRequired,
     listType: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
-        category: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
         currentQuantity: PropTypes.number.isRequired,
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,
