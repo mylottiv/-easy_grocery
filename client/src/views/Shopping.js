@@ -1,5 +1,5 @@
 import { Box, Columns, Heading} from 'react-bulma-components';
-import ItemPanel from '../components/ItemPanel';
+import ItemList from '../components/ItemList';
 
 function Shopping() {
 
@@ -10,7 +10,7 @@ function Shopping() {
                     <Heading>
                         Shopping List
                     </Heading>
-                    <ItemPanel viewType='Shopping' />
+                    <ItemList viewType='Shopping' />
                 </Box>
             </Columns.Column>
         </Columns>

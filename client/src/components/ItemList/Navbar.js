@@ -13,7 +13,7 @@ function Navbar({categories, selectedCategory, onChange}) {
             onChange={onChange}
             label={`Category: ${selectedCategory}`}
         >
-            {categories.filter((key) => !['variables', 'Shopping'].includes(key)).map(
+            {categories.filter((key) => !['Shopping'].includes(key)).map(
                 (tabName) => (
                     <Dropdown.Item renderAs='a' active={(selectedCategory === tabName)} value={tabName} key={tabName}>
                         {tabName}

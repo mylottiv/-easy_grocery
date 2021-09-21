@@ -1,5 +1,5 @@
 import { Box, Columns, Heading} from 'react-bulma-components';
-import ItemPanel from '../components/ItemPanel';
+import ItemList from '../components/ItemList';
 
 function Inventory() {
 
@@ -10,7 +10,7 @@ function Inventory() {
                     <Heading>
                         Inventory
                     </Heading>
-                    <ItemPanel viewType='Inventory' />
+                    <ItemList viewType='Inventory' />
                 </Box>
             </Columns.Column>
         </Columns>

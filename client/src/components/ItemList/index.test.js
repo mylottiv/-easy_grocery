@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import ItemPanel from '.';
+import ItemList from '.';
+
+// Old Tests, will eventually replace with stateful tests
 
 it('renders item panel for inventory view with dummy name and brands', () => {
-    render(<ItemPanel viewType='Inventory' />);
+    render(<ItemList viewType='Inventory' />);
     expect(screen.getByText("Pantry")).toBeInTheDocument();
     expect(screen.getByText("Fresh")).toBeInTheDocument();
     expect(screen.getByText("Frozen")).toBeInTheDocument();
@@ -10,7 +12,7 @@ it('renders item panel for inventory view with dummy name and brands', () => {
   });
 
 it('renders item panel for shopping view with dummy name and brands', () => {
-    render(<ItemPanel viewType='Shopping' />);
+    render(<ItemList viewType='Shopping' />);
     expect(screen.getByText("Apple")).toBeInTheDocument();
     expect(screen.getByText("Fruit")).toBeInTheDocument();
   });
