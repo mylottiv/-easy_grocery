@@ -4,7 +4,10 @@
 - ### [X] Create Login Page (Placeholder, will use Auth0 universal login)
 - ### [ ] Normalize and Lift Dummy State (redux probably)
 - ### [ ] Functional Navigation Links
+- ### [ ] Inventory and Shopping sections on dashboard as Link Buttons on mobile
 - ### [ ] Click Tests for relevant components
+- ### [ ] "Add New Item" field for Inventory view
+- ### [ ] "Additional Notes" field for Shopping view
 - ### [ ] Theme Support (context probably)
 
 ## Issues
