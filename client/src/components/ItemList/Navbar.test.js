@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import dummyItems from '../../dummyItems';
 import Navbar from './Navbar';
 
@@ -12,7 +13,7 @@ it('renders navbar with dummy values', () => {
 
 it('renders navbar with dummy values and triggers onChange successfully', () => {
     render(<Navbar categories={Object.keys(dummyItems)} selectedCategory='Pantry' onChange={mockOnChange} />);
-    fireEvent.click(screen.getByText("Category: Pantry"))
-    fireEvent.click(screen.getByText("Frozen"))
+    userEvent.click(screen.getByText("Category: Pantry"))
+    userEvent.click(screen.getByText("Frozen"))
     expect(mockOnChange).toHaveBeenCalledTimes(1);
 });

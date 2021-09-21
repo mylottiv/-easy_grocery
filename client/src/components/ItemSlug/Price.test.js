@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import dummyData from '../../dummyItems'
+import dummyVariables from '../../dummyVariables'
 import Price from './Price';
 
-const {price} = dummyData.variables;
+const {price} = dummyVariables;
 
 it('renders price field not in edit mode', () => {
     render(<Price editMode={false} priceString={price} />);

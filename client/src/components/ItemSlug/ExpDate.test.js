@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import dummyData from '../../dummyItems'
+import dummyVariables from '../../dummyVariables'
 import ExpDate from './ExpDate';
 
-const {expirationDateStatic, expirationDateEdit} = dummyData.variables;
+const {expirationDateStatic, expirationDateEdit} = dummyVariables;
 
 it('renders price field not in edit mode', () => {
     render(<ExpDate editMode={false} staticDateString={expirationDateStatic} editDateString={expirationDateEdit} />);

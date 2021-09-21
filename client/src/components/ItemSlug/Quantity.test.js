@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import dummyData from '../../dummyItems'
+import dummyVariables from '../../dummyVariables'
 import ItemQuantity from './Quantity';
 
-const {currentQuantity, desiredQuantity} = dummyData.variables;
+const {currentQuantity, desiredQuantity} = dummyVariables;
 
 it('renders quantity group not in edit mode', () => {
     render(<ItemQuantity editMode={false} currentQuantity={currentQuantity} desiredQuantity={desiredQuantity} />);
