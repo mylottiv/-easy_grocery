@@ -1,4 +1,5 @@
 import { Hero, Section, Container, Heading, Box, Columns, Block, Button } from 'react-bulma-components';
+import {Link} from 'react-router-dom'
 
 function Login() {
     return (
@@ -17,7 +18,7 @@ function Login() {
                                         Lorem ipsum dolor sit amet                                
                                     </Block>
                                     <Block display='flex' justifyContent='center'>
-                                        <Button color='success'>
+                                        <Button renderAs={Link} to='/dashboard' color='success'>
                                             Login Button
                                         </Button>
                                     </Block>

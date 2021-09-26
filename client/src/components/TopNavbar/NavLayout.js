@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import { Navbar, Heading, Icon } from 'react-bulma-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCog, faClipboardList, faBoxes, faReceipt } from '@fortawesome/free-solid-svg-icons'
+import { faCog, faClipboardList, faBoxes, faReceipt, faDoorOpen } from '@fortawesome/free-solid-svg-icons'
 // Not sure what's up with this import exactly
 import '../../App.css';
 
@@ -56,6 +56,12 @@ function NavLayout({loggedIn, activeNav, activeDropdown, burgerOnClick, dropdown
                         <span>{(loggedIn) ? 'Profile' : 'Login'}</span>
                     </Navbar.Item>
                 </Navbar.Container>
+                {loggedIn && <Navbar.Container>
+                    <Navbar.Item className='is-align-content-center is-inline-flex' renderAs={Link} to='/login'>
+                        <Icon size='small' className='mr-2 my-1'><FontAwesomeIcon icon={faDoorOpen} /></Icon>
+                        <span>Logout</span>
+                    </Navbar.Item>
+                </Navbar.Container>}
             </Navbar.Menu>
         </Navbar>
     )
