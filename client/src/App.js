@@ -15,36 +15,56 @@ import TopNavbar from './components/TopNavbar';
 function App() {
   return (
     <Router>
-      <div className='landing-body'> 
-        <div className='landing-body-overlay'>
-          <Switch>
-            <Route path="/dashboard">
-              <TopNavbar loggedIn />
+      <Switch>
+        <Route path="/dashboard">
+          <TopNavbar loggedIn />
+          <div className='landing-body'> 
+            <div className='landing-body-overlay'>
               <Dashboard />
-            </Route>
-            <Route path="/profile">
-              <TopNavbar loggedIn />
+            </div>
+          </div>
+        </Route>
+        <Route path="/profile">
+          <TopNavbar loggedIn />
+          <div className='landing-body'> 
+            <div className='landing-body-overlay'>
               <Profile />
-            </Route>
-            <Route path="/inventory">
-              <TopNavbar loggedIn />
-              <Inventory />
-            </Route>
-            <Route path="/shopping">
-              <TopNavbar loggedIn />
-              <Shopping />
-            </Route>
-            <Route path="/login">
-              <TopNavbar />
-              <Login />
-            </Route>
-            <Route path="/">
-              <TopNavbar />
-              <Landing />
-            </Route>
-          </Switch>
-        </div>
-      </div>
+            </div>
+          </div>
+        </Route>
+        <Route path="/inventory">
+          <TopNavbar loggedIn />
+          <div className='landing-body'> 
+            <div className='landing-body-overlay'>
+            <Inventory />
+            </div>
+          </div>
+        </Route>
+        <Route path="/shopping">
+          <TopNavbar loggedIn />
+          <div className='landing-body'> 
+            <div className='landing-body-overlay'>
+            <Shopping />
+            </div>
+          </div>
+        </Route>
+        <Route path="/login">
+          <TopNavbar />
+          <div className='landing-body'> 
+            <div className='landing-body-overlay'>
+            <Login />
+            </div>
+          </div>
+        </Route>
+        <Route path="/">
+          <TopNavbar />
+          <div className='landing-body'> 
+            <div className='landing-body-overlay'>
+            <Landing />
+            </div>
+          </div>
+        </Route>
+      </Switch>
     </Router>
   )
 }

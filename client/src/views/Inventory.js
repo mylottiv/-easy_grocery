@@ -4,7 +4,7 @@ import ItemList from '../components/ItemList';
 function Inventory() {
 
     return (
-        <Columns className='full-height-columns' vCentered marginless breakpoint='mobile'>
+        <Columns className='full-height-columns mt-4' vCentered marginless breakpoint='mobile'>
             <Columns.Column>
                 <Box>
                     <Heading>

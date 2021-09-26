@@ -2,7 +2,7 @@ import { Container, Heading, Box, Columns, Block, Media, Image, Content, Section
 
 function Dashboard() {
     return (
-        <Columns className='full-height-columns' vCentered marginless breakpoint="mobile">
+        <Columns className='full-height-columns mt-4' vCentered marginless breakpoint="mobile">
             <Columns.Column>
                 <Box>
                     <Media>
