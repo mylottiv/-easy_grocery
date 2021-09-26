@@ -5,16 +5,13 @@ import NavLayout from './NavLayout';
 function TopNavbar({loggedIn}) {
 
     const [navbarIsActive, setNavbarIsActive] = useState(false);
-    const [dropdownIsActive, setDropdownIsActive] = useState(false);
 
     return (
         <>
             <NavLayout 
                 loggedIn={loggedIn}
                 activeNav={navbarIsActive}
-                activeDropdown={dropdownIsActive}
                 burgerOnClick={() => setNavbarIsActive(!navbarIsActive)}
-                dropdownOnClick={() => setDropdownIsActive(!dropdownIsActive)} 
             />
         </>
     )

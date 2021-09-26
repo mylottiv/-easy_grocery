@@ -12,6 +12,7 @@
 
 ## Issues
 - ### [ ] CLICK OUTSIDE FUNCTIONALITY (fix w/functional nav links)
+- ### [ ] Fix Landing Body/Background moving with scroll on mobile
 - ### [ ] Color coded quantity numbers to emphasize current/desired (take colorblindness into account)
 - ### [ ] Removing background/margins in inventory/shopping interfaces
 - ### [ ] Refactoring TopNavbar & color coordinating w/above
