@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import { Navbar, Heading } from 'react-bulma-components';
+import { Navbar, Heading, Icon } from 'react-bulma-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCog, faClipboardList, faBoxes, faReceipt } from '@fortawesome/free-solid-svg-icons'
+// Not sure what's up with this import exactly
 import '../../App.css';
 
 function NavLayout({loggedIn, activeNav, activeDropdown, burgerOnClick, dropdownOnClick}) {
@@ -25,26 +28,32 @@ function NavLayout({loggedIn, activeNav, activeDropdown, burgerOnClick, dropdown
                             {(loggedIn) ? 'Dashboard' : 'Home'} 
                     </Navbar.Item>
                 </Navbar.Container>
-                <Navbar.Container>
+                {loggedIn && <Navbar.Container>
                     <Navbar.Item active={activeDropdown}>
                         <span data-testid='navbar-dropdown-button' role='button' onClick={dropdownOnClick} onKeyDown={dropdownOnClick} tabIndex={0}>
-                            <Navbar.Link arrowless>
-                                List management
+                            <Navbar.Link className='is-align-content-center is-inline-flex' arrowless>
+                                <Icon size='small' className='mr-2 my-1'><FontAwesomeIcon icon={faClipboardList} /></Icon>
+                                <span>List management</span>
                             </Navbar.Link>
                         </span>
                         <Navbar.Dropdown>
-                            <Navbar.Item renderAs={Link} to='/inventory'>
-                                Inventory
-                            </Navbar.Item>
-                            <Navbar.Item renderAs={Link} to='/shopping'>
-                                Shopping
-                            </Navbar.Item>
+                            <div className='is-flex is-flex-direction-column'>
+                                <Navbar.Item className='is-align-content-center is-inline-flex is-flex-grow-1' renderAs={Link} to='/inventory'>
+                                    <Icon size='small' className='mr-2 my-1'><FontAwesomeIcon icon={faBoxes} /></Icon>
+                                    <span>Inventory</span>
+                                </Navbar.Item>
+                                <Navbar.Item className='is-align-content-center is-inline-flex is-flex-grow-1' renderAs={Link} to='/shopping'>
+                                    <Icon size='small' className='mr-2 my-1'><FontAwesomeIcon icon={faReceipt} /></Icon>
+                                    <span>Shopping</span>
+                                </Navbar.Item>
+                            </div>
                         </Navbar.Dropdown>
                     </Navbar.Item>
-                </Navbar.Container>
+                </Navbar.Container>}
                 <Navbar.Container>
-                    <Navbar.Item renderAs={Link} to={(loggedIn) ? '/profile' : '/login'}>
-                        {(loggedIn) ? 'Profile' : 'Login'} 
+                    <Navbar.Item className='is-align-content-center is-inline-flex' renderAs={Link} to={(loggedIn) ? '/profile' : '/login'}>
+                        <Icon size='small' className='mr-2 my-1'><FontAwesomeIcon icon={faCog} /></Icon>
+                        <span>{(loggedIn) ? 'Profile' : 'Login'}</span>
                     </Navbar.Item>
                 </Navbar.Container>
             </Navbar.Menu>
