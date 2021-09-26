@@ -28,7 +28,7 @@ function Dashboard() {
                     <Columns breakpoint="mobile">
                         <Columns.Column>
                             <Box>
-                                <Section className='full-height-section' paddingless>
+                                <Section paddingless>
                                     <Container>
                                         <Heading size={4}>
                                             Inventory
@@ -47,7 +47,7 @@ function Dashboard() {
                         </Columns.Column>
                         <Columns.Column>
                             <Box>
-                                <Section className='full-height-section' paddingless>
+                                <Section paddingless>
                                     <Container>
                                         <Heading size={4}>
                                             Shopping
@@ -66,7 +66,7 @@ function Dashboard() {
                         </Columns.Column>
                     </Columns>
                     <Box>
-                        <Section className='full-height-section' paddingless>
+                        <Section paddingless>
                             <Container>
                                 <Heading size={4}>
                                     Defacto
