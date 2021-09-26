@@ -1,62 +1,88 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-// Need a better long term solution for this
-import {BrowserRouter as Router} from 'react-router-dom';
+import routerRender from '../../testingUtils/routerRender';
 import NavLayout from './NavLayout';
 
 it('renders top navbar component visible on mobile (not logged in)', () => {
-  render(<Router><NavLayout 
+  routerRender(<NavLayout 
     loggedIn={false}
     activeNav={false}
     activeDropdown={false}
     burgerOnClick={jest.fn()}
     dropdownOnClick={jest.fn()}
-    /></Router>);
+    />);
   expect(screen.getByText("EZ-Grocery")).toBeInTheDocument();
+  expect(screen.getByText("Home")).toBeInTheDocument();
   expect(screen.getByText("Login")).toBeInTheDocument();
-  expect(screen.getByText("List management")).toBeInTheDocument();
-  expect(screen.getByText("Inventory")).toBeInTheDocument();
-  expect(screen.getByText("Shopping")).toBeInTheDocument();
 });
 
 it('renders top navbar component visible on mobile (logged in)', () => {
-  render(<Router><NavLayout 
+  routerRender(<NavLayout 
     loggedIn
     activeNav={false}
     activeDropdown={false}
     burgerOnClick={jest.fn()}
     dropdownOnClick={jest.fn()}
-    /></Router>);
+    />);
   expect(screen.getByText("EZ-Grocery")).toBeInTheDocument();
-  expect(screen.getByText("Profile")).toBeInTheDocument();
+  expect(screen.getByText("Dashboard")).toBeInTheDocument();
   expect(screen.getByText("List management")).toBeInTheDocument();
   expect(screen.getByText("Inventory")).toBeInTheDocument();
   expect(screen.getByText("Shopping")).toBeInTheDocument();
+  expect(screen.getByText("Profile")).toBeInTheDocument();
+  expect(screen.getByText("Logout")).toBeInTheDocument();
 });
 
-// Click event tests will make much more sense once component is modularized
-it('triggers mock function on hamburger menu click', () => {
+it('Burger Button click fires passed function', () => {
   const burgerMock = jest.fn()
-  render(<Router><NavLayout 
+  routerRender(<NavLayout 
     loggedIn={false}
     activeNav={false}
     activeDropdown={false}
     burgerOnClick={burgerMock}
     dropdownOnClick={jest.fn()}
-    /></Router>);
+    />);
   userEvent.click(screen.getByTestId('burger-button'));
   expect(burgerMock).toHaveBeenCalledTimes(1);
 })
 
-it('triggers mock function on navbar dropdown menu click', () => {
+it('Dropdown menu click fires passed function', () => {
   const dropdownMock = jest.fn()
-  render(<Router><NavLayout 
-    loggedIn={false}
+  routerRender(<NavLayout 
+    loggedIn
     activeNav={false}
     activeDropdown={false}
     burgerOnClick={jest.fn()}
     dropdownOnClick={dropdownMock}
-    /></Router>);
+    />);
   userEvent.click(screen.getByTestId('navbar-dropdown-button'));
   expect(dropdownMock).toHaveBeenCalledTimes(1);
+})
+
+it('Navigation Links work (not logged in)', () => {
+  routerRender(<NavLayout 
+    loggedIn={false}
+    activeNav={false}
+    activeDropdown={false}
+    burgerOnClick={jest.fn()}
+    dropdownOnClick={jest.fn()}
+    />);
+  // This link especially shouldn't be handled with a literal
+  expect(screen.getByTestId("home-nav-link").href).toBe("http://localhost/");
+  expect(screen.getByTestId("login-nav-link").href).toBe("http://localhost/dashboard");
+})
+
+it('Navigation Links work (logged in)', () => {
+  routerRender(<NavLayout 
+    loggedIn
+    activeNav={false}
+    activeDropdown={false}
+    burgerOnClick={jest.fn()}
+    dropdownOnClick={jest.fn()}
+    />);
+  expect(screen.getByTestId("home-nav-link").href).toBe("http://localhost/dashboard");
+  expect(screen.getByTestId("inventory-nav-link").href).toBe("http://localhost/inventory");
+  expect(screen.getByTestId("shopping-nav-link").href).toBe("http://localhost/shopping");
+  expect(screen.getByTestId("profile-nav-link").href).toBe("http://localhost/profile");
+  expect(screen.getByTestId("login-nav-link").href).toBe("http://localhost/login");
 })
