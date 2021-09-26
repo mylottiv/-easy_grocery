@@ -36,7 +36,7 @@ function App() {
           <TopNavbar loggedIn />
           <div className='landing-body'> 
             <div className='landing-body-overlay'>
-            <Inventory />
+              <Inventory />
             </div>
           </div>
         </Route>
@@ -44,7 +44,7 @@ function App() {
           <TopNavbar loggedIn />
           <div className='landing-body'> 
             <div className='landing-body-overlay'>
-            <Shopping />
+              <Shopping />
             </div>
           </div>
         </Route>
@@ -52,7 +52,7 @@ function App() {
           <TopNavbar />
           <div className='landing-body'> 
             <div className='landing-body-overlay'>
-            <Login />
+              <Login />
             </div>
           </div>
         </Route>
@@ -60,7 +60,7 @@ function App() {
           <TopNavbar />
           <div className='landing-body'> 
             <div className='landing-body-overlay'>
-            <Landing />
+              <Landing />
             </div>
           </div>
         </Route>

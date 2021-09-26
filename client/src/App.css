@@ -7868,12 +7868,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-attachment: fixed;
   background-repeat: no-repeat; }
 
-.full-height-columns {
+.full-height-section {
   min-height: calc(100vh -  3.25rem);
   flex-direction: row;
   justify-content: stretch; }
 
-.full-height-columns .column {
+.full-height-section .column {
   overflow-y: auto; }
 
 .hamburger-button {

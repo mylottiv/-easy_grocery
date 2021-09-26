@@ -31,10 +31,11 @@ $title-family: 'Roboto', sans-serif;
     background-repeat: no-repeat;
 }
 
-.full-height-columns {
+.full-height-section {
   // Not WAD, still a small discrepancy in height b/w elements
   // * Only min-height seems needed now that implementing other views
   min-height: calc(100vh -  #{$navbar-height} );
+  // min-height: calc(100vh -  #{$navbar-height} );
   // max-height: calc(100vh -  #{$navbar-height} );
   // height: calc(100vh -  #{$navbar-height} );
   // 3.25rem is the navbar height variable.
@@ -47,7 +48,7 @@ $title-family: 'Roboto', sans-serif;
 }
 
 // the funniest part of this copy pasta is that it works
-.full-height-columns .column {
+.full-height-section .column {
     overflow-y: auto;
 }
 

@@ -1,10 +1,11 @@
-import { Box, Columns, Heading} from 'react-bulma-components';
+import { Section, Box, Columns, Heading} from 'react-bulma-components';
 import ItemList from '../components/ItemList';
 
 function Shopping() {
 
     return (
-        <Columns className='full-height-columns mt-4' vCentered marginless breakpoint='mobile'>
+        <Section className='full-height-section'>
+            <Columns vCentered breakpoint='mobile'>
             <Columns.Column>
                 <Box>
                     <Heading>
@@ -14,6 +15,7 @@ function Shopping() {
                 </Box>
             </Columns.Column>
         </Columns>
+        </Section>
     )
 }
 
