@@ -19,17 +19,17 @@ $title-family: 'Roboto', sans-serif;
 }
 
 .landing-body-overlay {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    // background: rgb(160,160,160);
-    background: linear-gradient(180deg, rgba(160,160,160,.5) 0%, rgba(59,56,56,.75) 50%);
-    background-position: center center; 
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: rgb(160,160,160);
+  background: linear-gradient(180deg, rgba(160,160,160,.5) 0%, rgba(59,56,56,.75) 50%);
+  background-position: center center; 
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .full-height-section {
