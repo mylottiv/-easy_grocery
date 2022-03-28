@@ -19,7 +19,7 @@ function Dashboard() {
                 <Section paddingless>
                     <Container>
                         <Heading display='flex' justifyContent='center' size={4}>
-                            Quick Facts
+                            Profile
                         </Heading>
                         <Content>
                             <Table>
