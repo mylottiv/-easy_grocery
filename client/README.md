@@ -2,10 +2,11 @@
 
 ## TODO
 - ### [X] Create Login Page (Placeholder, will use Auth0 universal login)
-- ### [ ] Normalize and Lift Dummy State (redux probably)
+- ### [X] Normalize and Lift Dummy State (redux probably)
 - ### [X] Functional Navigation Links
 - ### [X] Dashboard layout with Inventory and Shopping stat sections and link buttons
 - ### [ ] Click Tests for relevant components (Links & List buttons)
+- ### [ ] Wiring up Item Edit Mode with Redux
 - ### [ ] "Add New Item" field for Inventory view
 - ### [ ] "Additional Notes" field for Shopping view
 - ### [ ] Theme Support (context probably)
@@ -17,3 +18,4 @@
 - ### [ ] Removing background/margins in inventory/shopping interfaces
 - ### [ ] Long Item name formatting incorrectly on mobile
 - ### [X] Refactoring TopNavbar & color coordinating w/above
+- ### [ ] Fixing section dropdown for short/small item lists

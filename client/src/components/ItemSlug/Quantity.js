@@ -20,7 +20,7 @@ function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQu
                         <span>/</span>
                     <Form.Field className='mb-0'>
                         <Form.Control>
-                        <Form.Input size='small' textSize={6} defaultValue={desiredQuantity} isStatic={!editDesiredQuantity}/> 
+                            <Form.Input size='small' textSize={6} defaultValue={desiredQuantity} isStatic={!editDesiredQuantity}/> 
                         </Form.Control>
                     </Form.Field>
                 </>

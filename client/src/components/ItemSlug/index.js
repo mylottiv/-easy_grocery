@@ -38,12 +38,12 @@ ItemSlug.propTypes = {
     itemName: PropTypes.string.isRequired,
     listType: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
-        type: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
         currentQuantity: PropTypes.number.isRequired,
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,
-        expirationDateStatic: PropTypes.string.isRequired,
-        expirationDateEdit: PropTypes.string.isRequired
+        expirationDate: PropTypes.string.isRequired,
+        formattedDate: PropTypes.string.isRequired
     }).isRequired
 };
 

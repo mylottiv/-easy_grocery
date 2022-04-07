@@ -15,10 +15,10 @@ function FieldsMenu({properties, isVisible, displayType}) {
         <Menu.List display={(isVisible) ? 'block' : 'hidden'}>
             <Columns multiline breakpoint='mobile'>
                 <Columns.Column display='flex' flexDirection='column' justifyContent='center'>
-                    <span>Type</span>
+                    <span>Category</span>
                 </Columns.Column>
                 <Columns.Column display='flex' flexDirection='row' justifyContent='flex-end'>
-                    <span>{properties.type}</span>
+                    <span>{properties.category}</span>
                 </Columns.Column>
             </Columns>
             <Quantity 
@@ -33,8 +33,8 @@ function FieldsMenu({properties, isVisible, displayType}) {
                 <TagGroup editMode={editMode} />
                 <ExpDate 
                     editMode={editMode} 
-                    editDateString={properties.expirationDateEdit} 
-                    staticDateString={properties.expirationDateStatic}
+                    editDateString={properties.expirationDate} 
+                    staticDateString={properties.formattedDate}
                 />
                 <Button onClick={editOnClick}>
                     Edit
@@ -52,12 +52,12 @@ FieldsMenu.propTypes = {
     isVisible: PropTypes.bool,
     displayType: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
-        type: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
         currentQuantity: PropTypes.number.isRequired,
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,
-        expirationDateStatic: PropTypes.string.isRequired,
-        expirationDateEdit: PropTypes.string.isRequired
+        expirationDate: PropTypes.string.isRequired,
+        formattedDate: PropTypes.string.isRequired
     }).isRequired
 }
 

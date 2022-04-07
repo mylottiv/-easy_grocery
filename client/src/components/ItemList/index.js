@@ -1,27 +1,57 @@
-import {useState} from 'react';
 import PropTypes from 'prop-types';
-import dummyItems from '../../dummyItems';
-import ItemPanel from './ItemPanel';
+import {Panel, Menu} from 'react-bulma-components';
+import {useState} from 'react';
+import Navbar from './Navbar';
+import ItemSlug from '../ItemSlug';
 
-function ItemList({viewType}) {
+function ItemList({items, sections, type}) {
 
-    const [currentCategory, setCurrentCategory] = useState((viewType === 'Inventory') ? 'Pantry' : 'Shopping');
-    const dummyData = (viewType === 'Inventory') ? dummyItems[currentCategory] : dummyItems.Shopping;
-
+    const [currentSection, setCurrentSection] = useState('All');
+    const processedItems = Object.entries(items).reduce(
+        // eslint-disable-next-line no-unused-vars
+        (newArray, [key, {name, category, section, currentQuantity, desiredQuantity, price, expirationDate, formattedDate}]) => {
+            if ((currentSection === 'All') || (currentSection === section)) {
+                    newArray.push(
+                        {
+                        itemName: name,
+                        properties: {category, currentQuantity, desiredQuantity, price, expirationDate, formattedDate},
+                        listType: (type === 'Shopping') ? 'Shopping' : 'Inventory'
+                        }
+                    );
+            };
+            return newArray;
+        }, []
+    );
     return (
-        <>
-            <ItemPanel 
-                categories={Object.keys(dummyItems)}
-                currentCategory={currentCategory}
-                onChange={(category) => setCurrentCategory(category)} 
-                items={dummyData}
+        <Panel color='warning'>
+            <Panel.Header>
+                Items
+            </Panel.Header>
+            <Navbar 
+                sections={sections} 
+                selectedSection={currentSection} 
+                onChange={(section) => setCurrentSection(section)}
             />
-        </>
+            <Menu>
+                <Menu.List>
+                    {processedItems.map(({itemName, properties, listType}) => 
+                        (<ItemSlug 
+                            itemName={itemName}
+                            properties={properties}
+                            key={itemName}
+                            listType={listType}
+                        />)
+                    )}
+                </Menu.List>
+            </Menu>        
+        </Panel>
     )
 }
 
 ItemList.propTypes = {
-    viewType: PropTypes.string.isRequired
+    sections: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+    items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+    type: PropTypes.string.isRequired
 };
 
 export default ItemList

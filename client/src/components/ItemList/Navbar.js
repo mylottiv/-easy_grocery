@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
-function Navbar({categories, selectedCategory, onChange}) {
+function Navbar({sections, selectedSection, onChange}) {
+
+    const processedSections = Object.entries(sections).map(
+        ([key, {name}]) => (
+            <Dropdown.Item renderAs='a' active={(selectedSection === name)} value={name} key={key}>
+                {name}
+            </Dropdown.Item>
+        )
+    )
 
     return ( 
     <Level justifyContent='center' className='mt-4 mb-0' breakpoint='mobile'>
@@ -11,23 +19,17 @@ function Navbar({categories, selectedCategory, onChange}) {
             closeOnSelect
             icon={<Icon size='small'><FontAwesomeIcon icon={faAngleDown} /></Icon>}
             onChange={onChange}
-            label={`Category: ${selectedCategory}`}
+            label={selectedSection}
         >
-            {categories.filter((key) => !['Shopping'].includes(key)).map(
-                (tabName) => (
-                    <Dropdown.Item renderAs='a' active={(selectedCategory === tabName)} value={tabName} key={tabName}>
-                        {tabName}
-                    </Dropdown.Item>
-                )
-            )}
+            {processedSections}
         </Dropdown>
     </Level>
     )
 }
 
 Navbar.propTypes = {
-    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-    selectedCategory: PropTypes.string.isRequired,
+    sections: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])).isRequired,
+    selectedSection: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired
 };
 
