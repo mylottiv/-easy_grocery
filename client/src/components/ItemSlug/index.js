@@ -43,7 +43,6 @@ ItemSlug.propTypes = {
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,
         expirationDate: PropTypes.string.isRequired,
-        formattedDate: PropTypes.string.isRequired
     }).isRequired
 };
 

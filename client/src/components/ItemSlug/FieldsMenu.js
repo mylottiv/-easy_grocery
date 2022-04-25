@@ -5,6 +5,7 @@ import Quantity from './Quantity';
 import Price from './Price';
 import ExpDate from './ExpDate';
 import TagGroup from './TagGroup';
+import dateFormatHelper from './dateFormatHelper';
 
 function FieldsMenu({properties, isVisible, displayType}) {
 
@@ -33,8 +34,7 @@ function FieldsMenu({properties, isVisible, displayType}) {
                 <TagGroup editMode={editMode} />
                 <ExpDate 
                     editMode={editMode} 
-                    editDateString={properties.expirationDate} 
-                    staticDateString={properties.formattedDate}
+                    dateString={editMode ? properties.expirationDate : dateFormatHelper(properties.expirationDate)}
                 />
                 <Button onClick={editOnClick}>
                     Edit
@@ -57,7 +57,6 @@ FieldsMenu.propTypes = {
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,
         expirationDate: PropTypes.string.isRequired,
-        formattedDate: PropTypes.string.isRequired
     }).isRequired
 }
 

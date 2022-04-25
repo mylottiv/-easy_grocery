@@ -4,9 +4,17 @@ import ExpDate from './ExpDate';
 
 const {expirationDateStatic, expirationDateEdit} = dummyVariables;
 
-it('renders price field not in edit mode', () => {
-    render(<ExpDate editMode={false} staticDateString={expirationDateStatic} editDateString={expirationDateEdit} />);
-    expect(screen.getByText(`${expirationDateStatic}`)).toBeInTheDocument();
+describe('renders expiration date field w/dummy data in static mode', () => {
+    test('smoke test', () => {
+        render(<ExpDate editMode={false} dateString={expirationDateStatic} />);
+        expect(screen.getByText(expirationDateStatic)).toBeInTheDocument();
+    })
 });
 
 // renders in edit mode with valid input fields
+describe('renders expiration date field w/dummy data in edit mode', () => {
+    test('smoke test', () => {
+        render(<ExpDate editMode dateString={expirationDateEdit} />);
+        expect(screen.getByDisplayValue(expirationDateEdit)).toBeInTheDocument();
+    })
+});
