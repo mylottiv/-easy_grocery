@@ -18,7 +18,7 @@ MenuLink.propTypes = {
     linkName: PropTypes.string.isRequired,
     dataID: PropTypes.string.isRequired,
     linkURL: PropTypes.string.isRequired,
-    faIcon: PropTypes.element.isRequired,
+    faIcon: PropTypes.PropTypes.oneOfType([PropTypes.object]).isRequired,
 }
 
 export default MenuLink;

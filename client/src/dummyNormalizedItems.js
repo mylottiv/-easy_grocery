@@ -10,8 +10,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             1: {
@@ -22,8 +21,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: true        
             },
             2: {
@@ -34,8 +32,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             3: {
@@ -46,8 +43,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             4: {
@@ -58,8 +54,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             5: {
@@ -70,8 +65,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             6: {
@@ -82,8 +76,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             7: {
@@ -94,8 +87,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             8: {
@@ -106,8 +98,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             9: {
@@ -118,8 +109,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             10: {
@@ -130,8 +120,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             11: {
@@ -142,8 +131,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             12: {
@@ -154,8 +142,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: true        
             },
             13: {
@@ -166,8 +153,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             14: {
@@ -178,8 +164,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             15: {
@@ -190,8 +175,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             16: {
@@ -202,8 +186,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             17: {
@@ -214,8 +197,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             18: {
@@ -226,8 +208,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             19: {
@@ -238,8 +219,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             20: {
@@ -250,8 +230,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: true        
             },
             21: {
@@ -262,8 +241,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             22: {
@@ -274,8 +252,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
             23: {
@@ -286,8 +263,7 @@ export default {
                 currentQuantity: 10,
                 desiredQuantity: 42,
                 price: '1.52',
-                expirationDate: '10/12/2021',
-                formattedDate: '2021-10-12',
+                expirationDate: '2022-10-12',
                 onShoppingList: false        
             },
         }
