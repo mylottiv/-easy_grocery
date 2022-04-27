@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import FieldsMenu from './FieldsMenu';
+import FieldsList from './FieldsList';
 import dummyNormalizedItems from '../../dummyNormalizedItems';
-import processedItemsHelper from '../ItemList/processedItemsHelper';
+import processedItemsFilter from '../../helpers/processedItemsFilter';
 
 const testItems = [dummyNormalizedItems.items.entities[0], dummyNormalizedItems.items.entities[1]];
-const inventoryDummyItems = processedItemsHelper(testItems, 'All', 'Inventory')
-const shoppingDummyItems = processedItemsHelper(testItems, 'All', 'Shopping')
+const inventoryDummyItems = processedItemsFilter(testItems, 'All', 'Inventory')
+const shoppingDummyItems = processedItemsFilter(testItems, 'All', 'Shopping')
 
 describe('renders fields menu in inventory view with dummy properties', () => {
     test.each(inventoryDummyItems)('smoke tests', (currentTestItem) => {
-        render(<FieldsMenu properties={currentTestItem.properties}  displayType='Inventory' />);
+        render(<FieldsList properties={currentTestItem.properties}  displayType='Inventory' />);
         Object.entries(currentTestItem.properties).forEach(([key, property]) => {
             if (key !== 'expirationDate') {
                 expect(screen.getAllByText(property, {exact: false})[0]).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('renders fields menu in inventory view with dummy properties', () => {
 
 describe('renders fields menu in shopping view with dummy properties', () => {
     test.each(shoppingDummyItems)('smoke tests', (currentTestItem) => {
-        render(<FieldsMenu properties={currentTestItem.properties}  displayType='Inventory' />);
+        render(<FieldsList properties={currentTestItem.properties}  displayType='Shopping' />);
         Object.entries(currentTestItem.properties).forEach(([key, property]) => {
             if (key !== 'expirationDate') {
                 expect(screen.getAllByText(property, {exact: false})[0]).toBeInTheDocument();

@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import {Panel, Menu} from 'react-bulma-components';
 import {useState} from 'react';
-import processedItemsHelper from './processedItemsHelper';
+import processedItemsFilter from '../../helpers/processedItemsFilter';
 import Navbar from './Navbar';
 import ItemSlug from '../ItemSlug';
 
 function ItemList({items, sections, type}) {
 
     const [currentSection, setCurrentSection] = useState('All');
-    const slugItemsData = processedItemsHelper(items, currentSection, type);
+    const slugItemsData = processedItemsFilter(items, currentSection, type);
 
     return (
         <Panel color='warning'>

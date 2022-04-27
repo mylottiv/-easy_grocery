@@ -7,9 +7,9 @@ import ExpDate from './ExpDate';
 import TagGroup from './TagGroup';
 import dateFormatHelper from './dateFormatHelper';
 
-function FieldsMenu({properties, isVisible, displayType}) {
+function FieldsList({properties, isVisible, displayType}) {
 
-    const [editMode, setEditMode] = useState((displayType === 'Shopping'));
+    const [editMode, setEditMode] = useState(false);
     const editOnClick = () => setEditMode(!editMode);
 
     return (
@@ -36,19 +36,19 @@ function FieldsMenu({properties, isVisible, displayType}) {
                     editMode={editMode} 
                     dateString={editMode ? properties.expirationDate : dateFormatHelper(properties.expirationDate)}
                 />
-                <Button onClick={editOnClick}>
-                    Edit
-                </Button>
             </>}
+            <Button onClick={editOnClick}>
+                Edit
+            </Button>
         </Menu.List>
     )
 }
 
-FieldsMenu.defaultProps = {
+FieldsList.defaultProps = {
     isVisible: false
 }
 
-FieldsMenu.propTypes = {
+FieldsList.propTypes = {
     isVisible: PropTypes.bool,
     displayType: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
@@ -60,4 +60,4 @@ FieldsMenu.propTypes = {
     }).isRequired
 }
 
-export default FieldsMenu;
+export default FieldsList;

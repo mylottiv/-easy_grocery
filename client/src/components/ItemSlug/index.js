@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {useState} from 'react';
 import { Columns, Button, Menu, Panel, Form } from 'react-bulma-components';
-import FieldsMenu from './FieldsMenu';
+import FieldsList from './FieldsList';
 
 function ItemSlug({itemName, properties, listType}) {
 
@@ -27,7 +27,7 @@ function ItemSlug({itemName, properties, listType}) {
                             </Form.Field>
                         </Columns.Column>
                     </Columns>
-                    <FieldsMenu isVisible={itemIsVisible} properties={properties} displayType={listType} />
+                    <FieldsList isVisible={itemIsVisible} properties={properties} displayType={listType} />
                 </Columns.Column>
             </Panel.Block>
         </Menu.List.Item>

@@ -1,4 +1,4 @@
-export default function processedItemsHelper(items, currentSection, type) {
+export default function processedItemsFilter(items, currentSection, type) {
     const processedItems = items.reduce(
         (newArray, {name, category, section, currentQuantity, desiredQuantity, price, expirationDate}) => {
             if ((currentSection === 'All') || (currentSection === section)) {

@@ -13,7 +13,7 @@ describe('renders navbar with dummy values', () => {
     });
 
     // Might end up lifting this test as part of a functional suite
-    test('Triggers onChange mock on click', () => {
+    test('Triggers onChange mock on click for all dummy sections', () => {
         render(<Navbar sections={dummySections} selectedSection='All' onChange={mockOnChange} />);
         dummySections.forEach(({name}) => userEvent.click(screen.getByTitle(name)));
         expect(mockOnChange).toHaveBeenCalledTimes(dummySections.length);
