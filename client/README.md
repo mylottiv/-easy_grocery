@@ -5,9 +5,12 @@
 - ### [X] Normalize and Lift Dummy State (redux probably)
 - ### [X] Functional Navigation Links
 - ### [X] Dashboard layout with Inventory and Shopping stat sections and link buttons
-- ### [ ] Click Tests for relevant components (Links & List buttons)
+- ### [X] Mutable form wiring for item fields
 - ### [ ] Wiring up Item Edit Mode with Redux
+- ### [ ] Click Tests for form components
 - ### [ ] "Add New Item" field for Inventory view
+- ### [ ] Click Tests for Top Navbar components
+- ### [ ] Sorting by Tag functionality
 - ### [ ] "Additional Notes" field for Shopping view
 - ### [ ] Theme Support (context probably)
 
