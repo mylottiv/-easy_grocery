@@ -2,12 +2,12 @@ import { Section, Box, Columns, Heading} from 'react-bulma-components';
 import {useSelector} from 'react-redux';
 import {itemsSelectors} from '../redux/itemsSlice';
 import {sectionsSelectors} from '../redux/sectionsSlice';
+import onShoppingFilter from '../helpers/onShoppingFilter';
 import ItemList from '../components/ItemList';
 
 function Shopping() {
 
-    const filterFunc = (state) => Object.fromEntries(Object.entries(state).filter(([, value]) => value.onShoppingList));
-    const shoppingList = filterFunc(useSelector(itemsSelectors.selectAll));
+    const shoppingList = onShoppingFilter(useSelector(itemsSelectors.selectAll));
     const sections = useSelector(sectionsSelectors.selectAll);
 
     return (
