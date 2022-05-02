@@ -2,20 +2,22 @@ import PropTypes from 'prop-types';
 import {useState} from 'react';
 import {useForm, Controller} from 'react-hook-form';
 import { Columns, Button, Menu, Panel, Form } from 'react-bulma-components';
+import { useDispatch } from 'react-redux';
+import { upsertItem } from '../../redux/itemsSlice';
 import FieldsList from './FieldsList';
 
-function ItemSlug({itemName, properties}) {    
-    // Controllers, state, and hooks will get passed down from here into the field components
-    // Composed at this level even, if neccessary
+function ItemSlug({itemId, itemName, properties}) {    
 
     // const {control, handleSubmit, watch, formState: {errors} } = useForm();
-    const {control, handleSubmit, formState: {errors} } = useForm();
-    const onSubmit = (data) => console.log('Data submitted', data);
+    const dispatch = useDispatch();
+    const {control, handleSubmit} = useForm();
+    const onSubmit = (data) => {
+        console.log('Data submitted', {...data[itemName], id: itemId});
+        return dispatch(upsertItem({...data[itemName], id: itemId}))
+    };
     const [itemIsVisible, setItemIsVisible] = useState(false);
-    const menuOnClick = () => setItemIsVisible(!itemIsVisible)
-
-    // Initialized values seem to be undefined....Keep in mind when making API calls
-    // console.log(`${itemName}.onList`, watch(`${itemName}.onList`));
+    const menuOnClick = () => setItemIsVisible(!itemIsVisible);
+    const isInventoryView = ("onShoppingList" in properties)
 
     return (
         <Menu.List.Item renderAs='div'>
@@ -31,9 +33,9 @@ function ItemSlug({itemName, properties}) {
                             <Columns.Column display='flex-row' justifyContent='flex-end' className='pr-0 pl-0' size='one-third'>
                                 <Form.Field >                            
                                     <Form.Control>
-                                        <span className='pr-2'>{("onShoppingList" in properties) ? 'On List' : 'Got'}</span>
+                                        <span className='pr-2'>{isInventoryView ? 'On List' : 'Got'}</span>
                                         <Controller 
-                                            name={`${itemName}.onList`}
+                                            name={`${itemName}.${isInventoryView ? 'onShoppingList' : 'isBought'}`}
                                             control={control}
                                             defaultValue={("onShoppingList" in properties) ? properties.onShoppingList : properties.isBought}
                                             render={({field: { onChange, value, ref }}) => 
@@ -48,7 +50,7 @@ function ItemSlug({itemName, properties}) {
                                 </Form.Field>                          
                             </Columns.Column>
                         </Columns>
-                        <FieldsList isVisible={itemIsVisible} properties={properties} control={control} />
+                        <FieldsList isVisible={itemIsVisible} itemName={itemName} properties={properties} control={control} />
                     </form>
                 </Columns.Column>
             </Panel.Block>
@@ -57,6 +59,7 @@ function ItemSlug({itemName, properties}) {
 };
 
 ItemSlug.propTypes = {
+    itemId: PropTypes.number.isRequired,
     itemName: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
         category: PropTypes.string.isRequired,

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Controller } from 'react-hook-form';
 import {Columns, Form} from 'react-bulma-components';
 
-function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQuantity, control}) {
+function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQuantity, control, formNames}) {
 
     return (
         <Columns multiline breakpoint='mobile'>
@@ -16,14 +16,14 @@ function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQu
                     <Form.Field className='mb-0'>
                         <Form.Control>
                         <Controller 
-                            name='itemName currentQuantity'
+                            name={formNames.currentQuantity}
                             control={control}
                             defaultValue={currentQuantity}
                             render={({field: { onChange, value, ref }}) => 
                                 <Form.Input 
                                     size='small'
                                     textSize={6}
-                                    onChange={onChange}
+                                    onChange={(e) => onChange(parseInt(e.target.value, 10))}
                                     defaultValue={value}
                                     domRef={ref} 
                                 />
@@ -35,14 +35,14 @@ function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQu
                     <Form.Field className='mb-0'>
                         <Form.Control>
                         <Controller 
-                            name='itemName desiredQuantity'
+                            name={formNames.desiredQuantity}
                             control={control}
                             defaultValue={desiredQuantity}
                             render={({field: { onChange, value, ref }}) => 
                                 <Form.Input 
                                     size='small'
                                     textSize={6}
-                                    onChange={onChange}
+                                    onChange={(e) => onChange(parseInt(e.target.value, 10))}
                                     defaultValue={value}
                                     domRef={ref} 
                                     isStatic={!editDesiredQuantity}
@@ -65,7 +65,11 @@ ItemQuantity.propTypes = {
     editDesiredQuantity: PropTypes.bool.isRequired,
     currentQuantity: PropTypes.number.isRequired,
     desiredQuantity: PropTypes.number.isRequired,
-    control: PropTypes.oneOfType([PropTypes.object]).isRequired
+    control: PropTypes.oneOfType([PropTypes.object]).isRequired,
+    formNames: PropTypes.shape({
+        currentQuantity: PropTypes.string.isRequired,
+        desiredQuantity: PropTypes.string.isRequired
+    }).isRequired
 };
 
 export default ItemQuantity;

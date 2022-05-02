@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Controller } from 'react-hook-form';
 import {Columns, Form} from 'react-bulma-components';
 
-function ExpDate({editMode, dateString, control}) {
+function ExpDate({editMode, dateString, control, formName}) {
     return (
         <Columns multiline breakpoint='mobile'>
             <Columns.Column display='flex' flexDirection='column' justifyContent='center'>
@@ -14,7 +14,7 @@ function ExpDate({editMode, dateString, control}) {
                 <Form.Field>
                     <Form.Control>
                     <Controller 
-                        name='itemName dateString'
+                        name={formName}
                         control={control}
                         defaultValue={dateString}
                         render={({field: { onChange, value, ref }}) =>
@@ -43,7 +43,8 @@ ExpDate.defaultValue = {
 ExpDate.propTypes = {
     editMode: PropTypes.bool.isRequired,
     dateString: PropTypes.string.isRequired,
-    control: PropTypes.oneOfType([PropTypes.object]).isRequired
+    control: PropTypes.oneOfType([PropTypes.object]).isRequired,
+    formName: PropTypes.string.isRequired
 };
 
 export default ExpDate;

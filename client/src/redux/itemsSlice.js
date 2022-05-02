@@ -8,14 +8,14 @@ const itemsSlice = createSlice({
     initialState: dummyNormalizedState.items,
     reducers: {
         addItem: itemsAdapter.addOne,
-        updateItem: itemsAdapter.updateOne
+        upsertItem: itemsAdapter.upsertOne
     },
 })
 
 export const itemsSelectors = itemsAdapter.getSelectors((state) => state.items)
 
 // Action creators are generated for each case reducer function
-export const { addItem, updateItem } = itemsSlice.actions
+export const { addItem, upsertItem } = itemsSlice.actions
 
 export const itemsReducer = itemsSlice.reducer
 

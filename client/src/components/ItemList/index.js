@@ -22,8 +22,9 @@ function ItemList({items, sections, type}) {
             />
             <Menu>
                 <Menu.List>
-                    {slugItemsData.map(({itemName, properties}) => 
+                    {slugItemsData.map(({id, itemName, properties}) => 
                         (<ItemSlug 
+                            itemId={id}
                             itemName={itemName}
                             properties={properties}
                             key={itemName}

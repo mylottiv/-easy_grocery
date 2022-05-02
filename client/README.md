@@ -6,7 +6,8 @@
 - ### [X] Functional Navigation Links
 - ### [X] Dashboard layout with Inventory and Shopping stat sections and link buttons
 - ### [X] Mutable form wiring for item fields
-- ### [ ] Wiring up Item Edit Mode with Redux
+- ### [X] Wiring up Item Edit Mode with Redux
+- ### [ ] Implementing proper form/redux validation
 - ### [ ] Click Tests for form components
 - ### [ ] "Add New Item" field for Inventory view
 - ### [ ] Click Tests for Top Navbar components

@@ -8,13 +8,13 @@ export const sectionsSlice = createSlice({
     initialState: dummyNormalizedState.sections,
     reducers: {
         addSection: sectionsAdapter.addOne,
-        updateSection: sectionsAdapter.updateOne
+        upsertSection: sectionsAdapter.upsertOne
     },
 })
 
 export const sectionsSelectors = sectionsAdapter.getSelectors((state) => state.sections)
 
 // Action creators are generated for each case reducer function
-export const { addSection, updateSection } = sectionsSlice.actions
+export const { addSection, upsertSection } = sectionsSlice.actions
 
 export const sectionsReducer = sectionsSlice.reducer

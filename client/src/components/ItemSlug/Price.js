@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Controller } from 'react-hook-form';
 import {Columns, Form} from 'react-bulma-components';
 
-function Price({editMode, priceString, control}) {
+function Price({editMode, priceString, control, formName}) {
     return (
         <Columns multiline breakpoint='mobile'>
             <Columns.Column display='flex' flexDirection='column' justifyContent='center'>
@@ -15,7 +15,7 @@ function Price({editMode, priceString, control}) {
                 <Form.Field>
                     <Form.Control>
                     <Controller 
-                        name='itemName price'
+                        name={formName}
                         control={control}
                         defaultValue={priceString}
                         render={({field: { onChange, value, ref}}) => 
@@ -40,7 +40,8 @@ function Price({editMode, priceString, control}) {
 Price.propTypes = {
     editMode: PropTypes.bool.isRequired,
     priceString: PropTypes.string.isRequired,
-    control: PropTypes.oneOfType([PropTypes.object]).isRequired
+    control: PropTypes.oneOfType([PropTypes.object]).isRequired,
+    formName: PropTypes.string.isRequired
 }
 
 export default Price;

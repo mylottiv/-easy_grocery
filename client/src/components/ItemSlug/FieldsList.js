@@ -7,7 +7,7 @@ import ExpDate from './ExpDate';
 import TagGroup from './TagGroup';
 import dateFormatHelper from './dateFormatHelper';
 
-function FieldsList({properties, isVisible, control}) {
+function FieldsList({itemName, properties, isVisible, control}) {
 
     const [editMode, setEditMode] = useState(false);
     const editOnClick = () => setEditMode(!editMode);
@@ -26,11 +26,12 @@ function FieldsList({properties, isVisible, control}) {
             <Quantity 
                 editMode={editMode}
                 editDesiredQuantity={(editMode && "onShoppingList" in properties)}
-                currentQuantity={properties.currentQuantity} 
+                currentQuantity={properties.currentQuantity}
                 desiredQuantity={properties.desiredQuantity}
                 control={control}
+                formNames={{currentQuantity: `${itemName}.currentQuantity`, desiredQuantity: `${itemName}.desiredQuantity`}}
             />
-            <Price editMode={editMode} priceString={properties.price} control={control} />
+            <Price editMode={editMode} priceString={properties.price} control={control} formName={`${itemName}.price`} />
             {("onShoppingList" in properties) && 
                 <>
                     <TagGroup editMode={editMode} />
@@ -38,6 +39,7 @@ function FieldsList({properties, isVisible, control}) {
                         editMode={editMode} 
                         dateString={editMode ? properties.expirationDate : dateFormatHelper(properties.expirationDate)}
                         control={control}
+                        formName={`${itemName}.expirationDate`}
                     />
                 </>
             }
@@ -54,6 +56,7 @@ FieldsList.defaultProps = {
 
 FieldsList.propTypes = {
     isVisible: PropTypes.bool,
+    itemName: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
         category: PropTypes.string.isRequired,
         currentQuantity: PropTypes.number.isRequired,
