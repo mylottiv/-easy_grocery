@@ -7,10 +7,11 @@ import ExpDate from './ExpDate';
 import TagGroup from './TagGroup';
 import dateFormatHelper from './dateFormatHelper';
 
-function FieldsList({properties, isVisible, displayType}) {
+function FieldsList({properties, isVisible, control}) {
 
     const [editMode, setEditMode] = useState(false);
     const editOnClick = () => setEditMode(!editMode);
+    if (!isVisible && editMode) setEditMode(false);
 
     return (
         <Menu.List display={(isVisible) ? 'block' : 'hidden'}>
@@ -24,19 +25,22 @@ function FieldsList({properties, isVisible, displayType}) {
             </Columns>
             <Quantity 
                 editMode={editMode}
-                editDesiredQuantity={(editMode && displayType === 'Inventory')}
+                editDesiredQuantity={(editMode && "onShoppingList" in properties)}
                 currentQuantity={properties.currentQuantity} 
                 desiredQuantity={properties.desiredQuantity}
+                control={control}
             />
-            <Price editMode={editMode} priceString={properties.price} />
-            {(displayType === 'Inventory') && 
-            <>
-                <TagGroup editMode={editMode} />
-                <ExpDate 
-                    editMode={editMode} 
-                    dateString={editMode ? properties.expirationDate : dateFormatHelper(properties.expirationDate)}
-                />
-            </>}
+            <Price editMode={editMode} priceString={properties.price} control={control} />
+            {("onShoppingList" in properties) && 
+                <>
+                    <TagGroup editMode={editMode} />
+                    <ExpDate 
+                        editMode={editMode} 
+                        dateString={editMode ? properties.expirationDate : dateFormatHelper(properties.expirationDate)}
+                        control={control}
+                    />
+                </>
+            }
             <Button onClick={editOnClick}>
                 Edit
             </Button>
@@ -50,14 +54,16 @@ FieldsList.defaultProps = {
 
 FieldsList.propTypes = {
     isVisible: PropTypes.bool,
-    displayType: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
         category: PropTypes.string.isRequired,
         currentQuantity: PropTypes.number.isRequired,
         desiredQuantity: PropTypes.number.isRequired,
         price: PropTypes.string.isRequired,
         expirationDate: PropTypes.string.isRequired,
-    }).isRequired
+        onShoppingList: PropTypes.bool,
+        isBought: PropTypes.bool
+    }).isRequired,
+    control: PropTypes.oneOfType([PropTypes.object]).isRequired,
 }
 
 export default FieldsList;

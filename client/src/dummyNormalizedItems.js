@@ -11,7 +11,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             1: {
                 id: 1, 
@@ -22,7 +23,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: true        
+                onShoppingList: true,
+				isBought: false        
             },
             2: {
                 id: 2, 
@@ -33,7 +35,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             3: {
                 id: 3, 
@@ -44,7 +47,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             4: {
                 id: 4, 
@@ -55,7 +59,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             5: {
                 id: 5, 
@@ -66,7 +71,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             6: {
                 id: 6, 
@@ -77,7 +83,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             7: {
                 id: 7, 
@@ -88,7 +95,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             8: {
                 id: 8, 
@@ -99,7 +107,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             9: {
                 id: 9, 
@@ -110,7 +119,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             10: {
                 id: 10, 
@@ -121,7 +131,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             11: {
                 id: 11, 
@@ -132,7 +143,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             12: {
                 id: 12, 
@@ -143,7 +155,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: true        
+                onShoppingList: true,
+				isBought: false        
             },
             13: {
                 id: 13, 
@@ -154,7 +167,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             14: {
                 id: 14, 
@@ -165,7 +179,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             15: {
                 id: 15, 
@@ -176,7 +191,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             16: {
                 id: 16, 
@@ -187,7 +203,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             17: {
                 id: 17, 
@@ -198,7 +215,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             18: {
                 id: 18, 
@@ -209,7 +227,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             19: {
                 id: 19, 
@@ -220,7 +239,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             20: {
                 id: 20, 
@@ -231,7 +251,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: true        
+                onShoppingList: true,
+				isBought: false        
             },
             21: {
                 id: 21, 
@@ -242,7 +263,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             22: {
                 id: 22, 
@@ -253,7 +275,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
             23: {
                 id: 23, 
@@ -264,7 +287,8 @@ export default {
                 desiredQuantity: 42,
                 price: '1.52',
                 expirationDate: '2022-10-12',
-                onShoppingList: false        
+                onShoppingList: false,
+				isBought: false        
             },
         }
         // allNames: [ "Fusili", "Penne", "Spaghetti", "Baguette", "Pita", "Tortilla", "Apple",

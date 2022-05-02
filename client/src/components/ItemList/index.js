@@ -22,12 +22,11 @@ function ItemList({items, sections, type}) {
             />
             <Menu>
                 <Menu.List>
-                    {slugItemsData.map(({itemName, properties, listType}) => 
+                    {slugItemsData.map(({itemName, properties}) => 
                         (<ItemSlug 
                             itemName={itemName}
                             properties={properties}
                             key={itemName}
-                            listType={listType}
                         />)
                     )}
                 </Menu.List>
