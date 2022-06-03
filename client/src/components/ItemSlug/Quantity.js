@@ -18,10 +18,10 @@ function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQu
                         <Controller 
                             name={formNames.currentQuantity}
                             control={control}
-                            defaultValue={currentQuantity}
                             render={({field: { onChange, value, ref }}) => 
                                 <Form.Input 
                                     size='small'
+                                    type='number'
                                     textSize={6}
                                     onChange={(e) => onChange(parseInt(e.target.value, 10))}
                                     defaultValue={value}
@@ -37,10 +37,10 @@ function ItemQuantity({editMode, editDesiredQuantity, currentQuantity, desiredQu
                         <Controller 
                             name={formNames.desiredQuantity}
                             control={control}
-                            defaultValue={desiredQuantity}
                             render={({field: { onChange, value, ref }}) => 
                                 <Form.Input 
                                     size='small'
+                                    type='number'
                                     textSize={6}
                                     onChange={(e) => onChange(parseInt(e.target.value, 10))}
                                     defaultValue={value}

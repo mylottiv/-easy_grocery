@@ -16,7 +16,6 @@ function ExpDate({editMode, dateString, control, formName}) {
                     <Controller 
                         name={formName}
                         control={control}
-                        defaultValue={dateString}
                         render={({field: { onChange, value, ref }}) =>
                             <Form.Input 
                                 className='date-input p-0'

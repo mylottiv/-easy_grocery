@@ -1,23 +1,41 @@
 import PropTypes from 'prop-types';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {useForm, Controller} from 'react-hook-form';
 import { Columns, Button, Menu, Panel, Form } from 'react-bulma-components';
 import { useDispatch } from 'react-redux';
 import { upsertItem } from '../../redux/itemsSlice';
+import defaultValuesFactory from '../../helpers/defaultValuesFactory';
 import FieldsList from './FieldsList';
 
 function ItemSlug({itemId, itemName, properties}) {    
 
     // const {control, handleSubmit, watch, formState: {errors} } = useForm();
+    const [itemIsVisible, setItemIsVisible] = useState(false);
+    const [editMode, setEditMode] = useState(false);
+    const isInventoryView = ("onShoppingList" in properties);
+    const checkboxFieldName = isInventoryView ? 'onShoppingList' : 'isBought';
+
     const dispatch = useDispatch();
-    const {control, handleSubmit} = useForm();
+    const {control, handleSubmit, watch} = useForm({
+        defaultValues: defaultValuesFactory(itemName, properties)
+    });
     const onSubmit = (data) => {
         console.log('Data submitted', {...data[itemName], id: itemId});
         return dispatch(upsertItem({...data[itemName], id: itemId}))
     };
-    const [itemIsVisible, setItemIsVisible] = useState(false);
-    const menuOnClick = () => setItemIsVisible(!itemIsVisible);
-    const isInventoryView = ("onShoppingList" in properties)
+    const menuOnClick = (e) => {
+        e.preventDefault();
+        return setItemIsVisible(!itemIsVisible);
+    };
+
+    // not entirely comfortable with this, but spies the checkbox and submits form when its changed and not editing
+    useEffect(() => {
+        const subscription = watch((data, { name }) => {
+            // console.log(data, data[itemName][checkboxFieldName], name);
+            if (!editMode && (name === `${itemName}.${checkboxFieldName}`)) handleSubmit(onSubmit)();
+        });
+        return () => subscription.unsubscribe();
+      }, [watch, editMode]);
 
     return (
         <Menu.List.Item renderAs='div'>
@@ -35,9 +53,8 @@ function ItemSlug({itemId, itemName, properties}) {
                                     <Form.Control>
                                         <span className='pr-2'>{isInventoryView ? 'On List' : 'Got'}</span>
                                         <Controller 
-                                            name={`${itemName}.${isInventoryView ? 'onShoppingList' : 'isBought'}`}
+                                            name={`${itemName}.${checkboxFieldName}`}
                                             control={control}
-                                            defaultValue={("onShoppingList" in properties) ? properties.onShoppingList : properties.isBought}
                                             render={({field: { onChange, value, ref }}) => 
                                                 <Form.Checkbox 
                                                     onChange={onChange}
@@ -50,7 +67,7 @@ function ItemSlug({itemId, itemName, properties}) {
                                 </Form.Field>                          
                             </Columns.Column>
                         </Columns>
-                        <FieldsList isVisible={itemIsVisible} itemName={itemName} properties={properties} control={control} />
+                        <FieldsList isVisible={itemIsVisible} editMode={editMode} setEditMode={setEditMode} itemName={itemName} properties={properties} control={control} />
                     </form>
                 </Columns.Column>
             </Panel.Block>

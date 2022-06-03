@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import {useState} from 'react';
 import { Columns, Button, Menu } from 'react-bulma-components';
 import Quantity from './Quantity';
 import Price from './Price';
@@ -7,10 +6,13 @@ import ExpDate from './ExpDate';
 import TagGroup from './TagGroup';
 import dateFormatHelper from './dateFormatHelper';
 
-function FieldsList({itemName, properties, isVisible, control}) {
+function FieldsList({itemName, editMode, setEditMode, properties, isVisible, control}) {
 
-    const [editMode, setEditMode] = useState(false);
-    const editOnClick = () => setEditMode(!editMode);
+    // const [editMode, setEditMode] = useState(false);
+    const editOnClick = (e) => {
+        if (!editMode) e.preventDefault();
+        return setEditMode(!editMode)
+    };
     if (!isVisible && editMode) setEditMode(false);
 
     return (
@@ -56,6 +58,8 @@ FieldsList.defaultProps = {
 
 FieldsList.propTypes = {
     isVisible: PropTypes.bool,
+    editMode: PropTypes.bool.isRequired,
+    setEditMode: PropTypes.func.isRequired,
     itemName: PropTypes.string.isRequired,
     properties: PropTypes.shape({ 
         category: PropTypes.string.isRequired,

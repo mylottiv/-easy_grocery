@@ -17,7 +17,6 @@ function Price({editMode, priceString, control, formName}) {
                     <Controller 
                         name={formName}
                         control={control}
-                        defaultValue={priceString}
                         render={({field: { onChange, value, ref}}) => 
                             <Form.Input 
                                 size='small'

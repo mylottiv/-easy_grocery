@@ -16,6 +16,8 @@
 - ### [ ] Theme Support (context probably)
 
 ## Issues
+- ### [ ] Better edit mode formatting for Mobile
+- ### [ ] Quantity buttons not appearing on smaller screens
 - ### [ ] Fixing section dropdown in Shopping View for short/small item lists
 - ### [ ] CLICK OUTSIDE FUNCTIONALITY (fix w/functional nav links)
 - ### [ ] Fix Landing Body/Background moving with scroll on mobile
