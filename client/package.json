@@ -57,7 +57,7 @@
   "lint-staged": {
     "**/*": [
       "eslint",
-      "prettier --check --ignore-unknown"
+      "prettier --write --ignore-unknown"
     ]
   },
   "devDependencies": {
